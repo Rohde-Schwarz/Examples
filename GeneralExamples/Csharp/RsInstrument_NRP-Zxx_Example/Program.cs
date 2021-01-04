@@ -1,4 +1,6 @@
-// RsInstrument example for the legacy NRP-Zxx powersensors
+﻿// RsInstrument example for the legacy NRP-Zxx powersensors
+// - Installed Rohde & Schwarz VISA 5.12.3+ https://www.rohde-schwarz.com/appnote/1dc02
+// - Installed NRP Toolkit 4.20+ https://www.rohde-schwarz.com/software/nrp-toolkit/
 
 using System;
 using System.Collections.Generic;
@@ -14,7 +16,7 @@ namespace RsInstrument_NrpZxx_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.6.0");
+            RsInstrument.AssertMinVersion("1.8.0");
 
             try // Separate try-catch for initialization prevents accessing uninitialized object
             {
@@ -23,6 +25,7 @@ namespace RsInstrument_NrpZxx_Example
                 //-----------------------------------------------------------
 
                 // Adjust the VISA Resource string to fit your instrument
+                // You need the R&S VISA preference in order to use the legacy NRP-Zxx sensors
                 instr = new RsInstrument("USB::0x0aad::0x0095::104015::INSTR", false, false, "PreferRsVisa = True");
                 instr.VisaTimeout = 3000; // Timeout for VISA Read Operations
                 instr.OpcTimeout = 15000; // Timeout for opc-synchronised operations

@@ -1,4 +1,7 @@
 ﻿// C# Example for RTB2000 / RTM2000 / RTM3000 / RTA4000 Oscilloscopes
+// Preconditions:
+// - Installed Rohde & Schwarz VISA 5.12.3+ https://www.rohde-schwarz.com/appnote/1dc02
+// - You can also work without VISA by using LAN SocketIO - see Hello_World example
 
 using System;
 using System.Collections.Generic;
@@ -13,9 +16,9 @@ namespace RsInstrument_RTB2000_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.6.0");
+            RsInstrument.AssertMinVersion("1.8.0");
 
-            try // separate try-catch for initialization prevents accessing uninitialized object
+            try // Separate try-catch for initialization prevents accessing uninitialized object
             {
                 //-----------------------------------------------------------
                 // Initialization:

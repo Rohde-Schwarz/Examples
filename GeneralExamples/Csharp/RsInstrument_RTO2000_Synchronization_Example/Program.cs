@@ -2,6 +2,8 @@
 // "SING" command, the program waits for the acquisition to finish
 // "*TST?" query, the program waits for the selftest to finish and then reads the result of the selftest
 // Use this example for Service Request waiting by changing the RsInstrument object constructor (see below)
+// Preconditions:
+// - Installed Rohde & Schwarz VISA 5.12.3+ https://www.rohde-schwarz.com/appnote/1dc02 This example will not work without VISA installation
 
 using System;
 using System.Collections.Generic;
@@ -18,12 +20,12 @@ namespace RsInstrument_RTO2000_Synchronization_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.6.0");
+            RsInstrument.AssertMinVersion("1.8.0");
 
-            try //separate try-catch for scope initialization prevents accessing uninitialized object
+            try // Separate try-catch for scope initialization prevents accessing uninitialized object
             {
                 //-----------------------------------------------------------
-                //Initialization:
+                // Initialization:
                 //-----------------------------------------------------------
                 // Adjust the VISA Resource string to fit your instrument
                 // For SRQ waiting, use the following constructor:
