@@ -3,9 +3,8 @@
 
 from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, see Readme.txt for more details
 
-
+RsInstrument.assert_minimum_version('1.10.0')
 instr = RsInstrument("ASRL4::INSTR", True, False, "DriverSetup=(TerminationCharacter='\r', WriteDelay=200, ReadDelay=0)")
-instr.assert_minimum_version('1.9.0')
 instr.write_str("*RST")
 idn = instr.query_str('*IDN?')
 print(f"\nHello, I am: '{idn}'")

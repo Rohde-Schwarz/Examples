@@ -7,14 +7,13 @@ from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, se
 import time
 
 nrpz = None
+RsInstrument.assert_minimum_version('1.10.0')
 try:
 	# -----------------------------------------------------------
 	# Initialization:
 	# -----------------------------------------------------------
 	# Adjust the VISA Resource string to fit your instrument
-	nrpz = RsInstrument('USB::0x0aad::0x0095::104015::INSTR', True, False)
-	# instr = RsInstrument('RSNRP::0x0095::104015::INSTR', True, False)
-	nrpz.assert_minimum_version('1.9.0')
+	nrpz = RsInstrument('RSNRP::0x0095::104015::INSTR', True, False)
 	nrpz.visa_timeout = 3000  # Timeout for VISA Read Operations
 	nrpz.instrument_status_checking = True  # Error check after each command
 except Exception as ex:

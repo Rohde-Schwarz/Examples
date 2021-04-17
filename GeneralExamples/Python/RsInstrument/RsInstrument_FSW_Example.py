@@ -7,10 +7,10 @@ from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, se
 from time import time
 
 specan = None
+RsInstrument.assert_minimum_version('1.10.0')
 try:
 	# Adjust the VISA Resource string to fit your instrument
 	specan = RsInstrument('TCPIP::localhost::INSTR', True, False)
-	specan.assert_minimum_version('1.9.0')
 	specan.visa_timeout = 3000  # Timeout for VISA Read Operations
 	specan.opc_timeout = 3000  # Timeout for opc-synchronised operations
 	specan.instrument_status_checking = True  # Error check after each command

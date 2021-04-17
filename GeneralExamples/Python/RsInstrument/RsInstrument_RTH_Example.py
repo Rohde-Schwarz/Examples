@@ -32,13 +32,13 @@ from time import time
 
 
 def main():
-     
+
+    RsInstrument.assert_minimum_version('1.10.0')
     rth = None
     try:
         # adjust the VISA Resource string to fit your instrument
         rth = RsInstrument('TCPIP::192.168.0.1::INSTR', True, False)
         # rth = RsInstrument('USB0::0x0AAD::0x012F::1317.5000K02/103176::INSTR', True, False)
-        rth.assert_minimum_version('1.9.0')
         rth.visa_timeout = 6000  # Timeout for VISA Read Operations
         rth.opc_timeout = 3000  # Timeout for opc-synchronised operations
         rth.instrument_status_checking = True  # Error check after each command

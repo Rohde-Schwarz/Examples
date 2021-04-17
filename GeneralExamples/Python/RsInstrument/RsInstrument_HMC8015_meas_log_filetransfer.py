@@ -38,7 +38,7 @@ logdur = 2  # Log time in seconds
 log_file_name = 'LOG1234.CSV'  # Name of the log file
 
 # Define the device handle
-RsInstrument.assert_minimum_version('1.8.1')  # assure that the installed version is 1.8.1 or newer
+RsInstrument.assert_minimum_version('1.10.0')
 HMC8015 = RsInstrument(ressource, True, True, "SelectVisa='rs'")
 """
 (ressource, True, True, "SelectVisa='rs'") has the following meaning:

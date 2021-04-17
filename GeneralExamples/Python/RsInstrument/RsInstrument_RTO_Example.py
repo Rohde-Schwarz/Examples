@@ -6,10 +6,10 @@
 from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, see Readme.txt for more details
 from time import time
 
+RsInstrument.assert_minimum_version('1.10.0')
 rto = None
 try:
 	rto = RsInstrument('TCPIP::192.168.2.10::INSTR', True, False)
-	rto.assert_minimum_version('1.9.0')
 	rto.visa_timeout = 3000  # Timeout for VISA Read Operations
 	rto.opc_timeout = 15000  # Timeout for opc-synchronised operations
 	rto.instrument_status_checking = True  # Error check after each command

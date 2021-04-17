@@ -5,8 +5,8 @@
 
 from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, see Readme.txt for more details
 
+RsInstrument.assert_minimum_version('1.10.0')
 instr = RsInstrument('TCPIP::10.205.0.41::5025::SOCKET', True, True)
-instr.assert_minimum_version('1.9.0')
 
 idn = instr.query_str('*IDN?')
 print(f"\nHello, I am: '{idn}'")

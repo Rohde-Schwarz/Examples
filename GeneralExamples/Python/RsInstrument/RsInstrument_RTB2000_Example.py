@@ -6,11 +6,11 @@
 from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, see Readme.txt for more details
 from time import time
 
+RsInstrument.assert_minimum_version('1.10.0')
 rtb = None
 try:
 	# Adjust the VISA Resource string to fit your instrument
 	rtb = RsInstrument('TCPIP::192.168.2.10::INSTR', True, False)
-	rtb.assert_minimum_version('1.9.0')
 	rtb.visa_timeout = 3000  # Timeout for VISA Read Operations
 	rtb.opc_timeout = 15000  # Timeout for opc-synchronised operations
 	rtb.instrument_status_checking = True  # Error check after each command
