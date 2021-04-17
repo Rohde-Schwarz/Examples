@@ -23,6 +23,7 @@ def my_transfer_handler(args):
     time.sleep(0.1)
 
 
+RsSmw.assert_minimum_version('4.80.2')
 smw = RsSmw('TCPIP::10.112.1.179::HISLIP')
 print(smw.utilities.idn_string)
 smw.utilities.reset()

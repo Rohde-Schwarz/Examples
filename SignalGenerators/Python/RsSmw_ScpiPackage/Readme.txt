@@ -1,4 +1,4 @@
-These instrument drivers are a new form of native Python 3.x drivers for signal generators.
+These instrument drivers are a new form of native Python 3.x drivers for Rohde & Schwarz Signal Generators.
 This zip file only contains examples of use for the RsSmw Python package. The actual RsSmw package you find here:
 https://pypi.org/project/RsSmw/
 
@@ -26,7 +26,7 @@ Because of the dependency (pyvisa), you need internet connection.
 
 - Open the command prompt (Windows Start, type 'cmd' + Enter)
 - Navigate to you Python installation folder (Subfolder 'Scripts', where pip.exe is located) with the 'cd' command. Example:
-	cd c:\Users\JohnSmith\AppData\Local\Programs\Python\Python37\Scripts
+	cd c:\Users\JohnSmith\AppData\Local\Programs\Python\Python36\Scripts
 - Run:
 	pip install RsSmw
 
@@ -40,6 +40,6 @@ Offline installation:
 
 - Open the command prompt (Windows Start, type 'cmd' + Enter)
 - Navigate to you Python installation folder (Subfolder 'Scripts', where pip.exe is located) with the 'cd' command. Example:
-	cd c:\Users\JohnSmith\AppData\Local\Programs\Python\Python38\Scripts
+	cd c:\Users\JohnSmith\AppData\Local\Programs\Python\Python36\Scripts
 - Run:
 	pip install c:\temp\RsSmw-4.80.0.25.tar

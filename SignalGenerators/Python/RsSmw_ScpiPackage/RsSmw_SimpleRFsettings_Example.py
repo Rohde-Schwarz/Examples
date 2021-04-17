@@ -1,7 +1,7 @@
 from RsSmw import *
 
-
-smw = RsSmw('TCPIP::10.112.1.179::HISLIP')
+RsSmw.assert_minimum_version('4.80.2')
+smw = RsSmw('TCPIP::10.112.1.67::HISLIP')
 # smw = RsSmw('TCPIP::10.112.1.179::5025::SOCKET', options='SelectVisa=SocketIo') # No VISA needed
 print(f'Driver Info: {smw.utilities.driver_version}')
 print(f'Instrument: {smw.utilities.idn_string}')
@@ -33,7 +33,6 @@ smw_rf2.output.state.set_value(False)
 smw_rf2.source.frequency.set_mode(enums.FreqMode.SWEep)
 smw_rf2.source.power.level.immediate.set_amplitude(-35)
 smw_rf2.source.frequency.set_start(800E6)
-smw_rf2.source.frequency.set_start('22')
 smw_rf2.source.frequency.set_stop(900E6)
 smw_rf2.source.frequency.step.set_mode(enums.FreqStepMode.DECimal)
 smw_rf2.source.frequency.step.set_increment(10E6)
