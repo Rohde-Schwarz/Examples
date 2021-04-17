@@ -1,4 +1,4 @@
-﻿// C# Example for RTO / RTE / RTP Oscilloscopes
+// C# Example for RTO / RTE / RTP Oscilloscopes
 // Preconditions:
 // - Installed Rohde & Schwarz VISA 5.12.3+ https://www.rohde-schwarz.com/appnote/1dc02
 // - You can also work without VISA by using LAN SocketIO - see Hello_World example
@@ -16,7 +16,7 @@ namespace RsInstrument_RTO2000_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.8.0");
+            RsInstrument.AssertMinVersion("1.10.1");
 
             try // Separate try-catch for initialization prevents accessing uninitialized object
             {

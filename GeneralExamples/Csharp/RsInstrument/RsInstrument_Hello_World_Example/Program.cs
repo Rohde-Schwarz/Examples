@@ -1,4 +1,4 @@
-﻿// Hello World example for any R&S instrument
+// Hello World example for any R&S instrument
 // - Preconditions: 
 // - Installed Rohde & Schwarz VISA 5.12.3+ https://www.rohde-schwarz.com/appnote/1dc02
 // - You can also work without VISA - see the 'Initialization' section 
@@ -17,7 +17,7 @@ namespace RsInstrument_Hello_World_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.8.0");
+            RsInstrument.AssertMinVersion("1.10.1");
 
             try // Separate try-catch for initialization prevents accessing uninitialized object
             {
@@ -25,7 +25,7 @@ namespace RsInstrument_Hello_World_Example
                 // Initialization:
                 //-----------------------------------------------------------
                 // Adjust the VISA Resource string to fit your instrument
-                instr = new RsInstrument("TCPIP::10.112.1.116::INSTR");
+                instr = new RsInstrument("TCPIP::10.112.1.67::INSTR");
                 
                 // For socket instrument, use the following:
                 // instr = new RsInstrument("TCPIP::10.112.1.140::5025::SOCKET");

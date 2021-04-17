@@ -1,4 +1,4 @@
-﻿// C# example showing the synchronization of the "SING" command with the Service Request event handler
+// C# example showing the synchronization of the "SING" command with the Service Request event handler
 // Event handler Scope_SrqHandler() is called when the instrument generates Service Request.
 // Preconditions:
 // - Installed Rohde & Schwarz VISA 5.12.3+ https://www.rohde-schwarz.com/appnote/1dc02 This example will not work without VISA installation
@@ -26,7 +26,7 @@ namespace Csharp_VISA.NET_Scope_SRQevent_Example
         {
 
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.8.0");
+            RsInstrument.AssertMinVersion("1.10.1");
 
             try // Separate try-catch for scope initialization prevents accessing uninitialized object
             {

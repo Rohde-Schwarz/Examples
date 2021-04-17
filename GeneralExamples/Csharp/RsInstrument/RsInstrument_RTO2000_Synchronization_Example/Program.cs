@@ -1,4 +1,4 @@
-﻿// C# example showing the synchronization with the STB polling and WaitForSrq of:
+// C# example showing the synchronization with the STB polling and WaitForSrq of:
 // "SING" command, the program waits for the acquisition to finish
 // "*TST?" query, the program waits for the selftest to finish and then reads the result of the selftest
 // Use this example for Service Request waiting by changing the RsInstrument object constructor (see below)
@@ -20,7 +20,7 @@ namespace RsInstrument_RTO2000_Synchronization_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.8.0");
+            RsInstrument.AssertMinVersion("1.10.1");
 
             try // Separate try-catch for scope initialization prevents accessing uninitialized object
             {

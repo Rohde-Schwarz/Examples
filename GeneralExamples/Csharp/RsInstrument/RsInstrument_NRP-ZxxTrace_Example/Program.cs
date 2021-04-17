@@ -1,4 +1,4 @@
-﻿// RsInstrument example for reading a trace from the legacy NRP-Zxx powersensors
+// RsInstrument example for reading a trace from the legacy NRP-Zxx powersensors
 // - Installed Rohde & Schwarz VISA 5.12.3+ https://www.rohde-schwarz.com/appnote/1dc02
 // - Installed NRP Toolkit 4.20+ https://www.rohde-schwarz.com/software/nrp-toolkit/
 
@@ -16,7 +16,7 @@ namespace RsInstrument_NrpZxx_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.8.0");
+            RsInstrument.AssertMinVersion("1.10.1");
 
             try // Separate try-catch for initialization prevents accessing uninitialized object
             {
