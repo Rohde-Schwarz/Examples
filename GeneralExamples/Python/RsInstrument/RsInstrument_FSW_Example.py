@@ -10,7 +10,7 @@ specan = None
 RsInstrument.assert_minimum_version('1.11.0.57')
 try:
 	# Adjust the VISA Resource string to fit your instrument
-	specan = RsInstrument('TCPIP::localhost::INSTR', True, False)
+	specan = RsInstrument('TCPIP::192.168.1.10::INSTR', True, False)
 	specan.visa_timeout = 3000  # Timeout for VISA Read Operations
 	specan.opc_timeout = 3000  # Timeout for opc-synchronised operations
 	specan.instrument_status_checking = True  # Error check after each command
