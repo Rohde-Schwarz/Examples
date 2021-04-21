@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RsSmab" Version="4.70.300.24" />
+    <PackageReference Include="RsSgt" Version="4.80.1.17" />
   </ItemGroup>
 
 </Project>

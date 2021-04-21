@@ -9,7 +9,6 @@
 """
 
 import numpy as np
-
 from RsSmw import *
 
 RsSmw.assert_minimum_version('4.80.2')

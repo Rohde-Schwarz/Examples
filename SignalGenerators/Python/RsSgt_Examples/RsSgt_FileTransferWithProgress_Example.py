@@ -1,11 +1,11 @@
 """Example showing how you can transfer a big file to the instrument and from the instrument with showing the progress.
-Since the SMA100B is quite fast on data transfer, we slow it down by waiting for 100ms between each chunk transfer (1MB)
+Since the SGT100A is quite fast on data transfer, we slow it down by waiting for 100ms between each chunk transfer (1MB)
 This way we see the transfer progress better and we do not need a file that is so big - let's take cca 20MB.
 For big files, use the example without the time.sleep(0.1)"""
 
 import time
 import numpy as np
-from RsSmab import *
+from RsSgt import *
 
 
 def my_transfer_handler(args):
@@ -23,10 +23,9 @@ def my_transfer_handler(args):
     time.sleep(0.1)
 
 
-RsSmab.assert_minimum_version('4.70.300')
-smab = RsSmab('TCPIP::10.112.1.64::HISLIP')
-print(smab.utilities.idn_string)
-smab.utilities.reset()
+sgt = RsSgt('TCPIP::10.214.1.57::HISLIP')
+print(sgt.utilities.idn_string)
+sgt.utilities.reset()
 
 pc_file = r'c:\temp\bigFile.bin'
 instr_file = '/var/user/bigFileInstr.bin'
@@ -39,13 +38,13 @@ with open(pc_file, 'wb') as file:
         file.write(np.random.bytes(x1mb))
 
 # Send the file to the instrument with events
-smab.events.on_write_handler = my_transfer_handler
-smab.utilities.data_chunk_size = x1mb
+sgt.events.on_write_handler = my_transfer_handler
+sgt.utilities.data_chunk_size = x1mb
 print(f'Sending file to the instrument...')
-smab.utilities.send_file_from_pc_to_instrument(pc_file, instr_file)
-smab.events.on_write_handler = None
+sgt.utilities.send_file_from_pc_to_instrument(pc_file, instr_file)
+sgt.events.on_write_handler = None
 print(f'Receiving file from the instrument...')
-smab.events.on_read_handler = my_transfer_handler
-smab.utilities.read_file_from_instrument_to_pc(instr_file, pc_file_back)
-smab.events.on_read_handler = None
-smab.close()
+sgt.events.on_read_handler = my_transfer_handler
+sgt.utilities.read_file_from_instrument_to_pc(instr_file, pc_file_back)
+sgt.events.on_read_handler = None
+sgt.close()

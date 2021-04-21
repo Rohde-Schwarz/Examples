@@ -30,7 +30,7 @@ print(f'Channel 1 PEP level: {pep} dBm')
 smw.repcap_hwInstance_set(repcap.HwInstance.InstB)
 
 # Now we are addressing output B
-#   OUTPut2:STATe ON -
+#   OUTPut2:STATe ON
 smw.output.state.set_value(True)
 
 #         SOURce2:POWer:PEP?
