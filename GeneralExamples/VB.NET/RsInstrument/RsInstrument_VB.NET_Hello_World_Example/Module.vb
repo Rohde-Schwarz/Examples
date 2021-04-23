@@ -13,7 +13,7 @@ Imports RohdeSchwarz.RsInstrument ' .NET component providing all the necessary V
 Module Program
   Sub Main(args As String())
 
-    Dim instr
+    Dim instr As RsInstrument
     Try ' Separate try-catch for initialization prevents accessing uninitialized object
       ' ----------------------------------------------------------
       ' Initialization:
