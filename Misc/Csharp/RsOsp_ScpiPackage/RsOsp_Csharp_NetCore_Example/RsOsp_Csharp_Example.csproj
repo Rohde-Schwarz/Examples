@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RsOsp" Version="1.0.3.79" />
+    <PackageReference Include="RsOsp" Version="2.10.14.88" />
   </ItemGroup>
 
 </Project>
