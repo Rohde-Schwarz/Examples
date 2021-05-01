@@ -3,7 +3,7 @@
 import time
 from RsNgx import *
 
-RsNgx.assert_minimum_version('1.0.0.37')
+RsNgx.assert_minimum_version('3.0.0.38')
 ngx = RsNgx('TCPIP::10.102.52.45::INSTR')
 print(f'Hello, I am: {ngx.utilities.idn_string}')
 print(f'My installed options: {ngx.utilities.instrument_options}')
