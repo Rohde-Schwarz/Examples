@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RsNgx_GettingStarted_Example", "RsNgx_GettingStarted_Example.csproj", "{1B0D16F5-78D0-4013-B2B0-4DB95E9FD48E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B0D16F5-78D0-4013-B2B0-4DB95E9FD48E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B0D16F5-78D0-4013-B2B0-4DB95E9FD48E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B0D16F5-78D0-4013-B2B0-4DB95E9FD48E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B0D16F5-78D0-4013-B2B0-4DB95E9FD48E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CC2C76E-AF2E-4115-BF38-4C1536E7F60E}
+	EndGlobalSection
+EndGlobal
