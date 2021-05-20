@@ -17,7 +17,7 @@ namespace RsInstrument_Hello_World_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.10.1");
+            RsInstrument.AssertMinVersion("1.11.0");
 
             try // Separate try-catch for initialization prevents accessing uninitialized object
             {
