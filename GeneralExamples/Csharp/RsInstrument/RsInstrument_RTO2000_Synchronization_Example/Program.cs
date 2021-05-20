@@ -20,7 +20,7 @@ namespace RsInstrument_RTO2000_Synchronization_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.10.1");
+            RsInstrument.AssertMinVersion("1.11.0");
 
             try // Separate try-catch for scope initialization prevents accessing uninitialized object
             {
