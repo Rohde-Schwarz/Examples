@@ -6,7 +6,7 @@
 
 from RsCmwBase import *  # install from pypi.org
 
-RsCmwBase.assert_minimum_version('3.7.90.32')
+RsCmwBase.assert_minimum_version('3.7.90.38')
 cmw_base = RsCmwBase('TCPIP::10.112.1.116::INSTR', True, False)
 print(f'CMW Base IND: {cmw_base.utilities.idn_string}')
 print(f'CMW Instrument options:\n{",".join(cmw_base.utilities.instrument_options)}')
@@ -43,7 +43,7 @@ cmw_base.reliability.on_update_handler = my_reliability_handler
 print(f"\nReliability last value: {cmw_base.reliability.last_value}, context '{cmw_base.reliability.last_context}', message: {cmw_base.reliability.last_message}")
 
 # Reference Frequency Source
-cmw_base.system.reference.frequency.source_set(enums.SourceIntExt.INTernal)
+cmw_base.system.reference.frequency.set_source(enums.SourceIntExt.INTernal)
 
 # Close the session
 cmw_base.close()

@@ -15,9 +15,9 @@ from RsCmwGprfGen import RsCmwGprfGen  # install from pypi.org
 from RsCmwGprfGen import enums as enums_gprf_gen
 from RsCmwGprfGen import repcap as repcap_gprf_gen
 
-RsCmwBase.assert_minimum_version('3.7.90.32')
-RsCmwGprfMeas.assert_minimum_version('3.7.30.26')
-RsCmwGprfGen.assert_minimum_version('3.7.50.28')
+RsCmwBase.assert_minimum_version('3.7.90.38')
+RsCmwGprfMeas.assert_minimum_version('3.7.30.31')
+RsCmwGprfGen.assert_minimum_version('3.7.50.53')
 
 cmw_base = RsCmwBase('TCPIP::10.112.1.116::INSTR', True, False)
 # Reference Frequency Source
