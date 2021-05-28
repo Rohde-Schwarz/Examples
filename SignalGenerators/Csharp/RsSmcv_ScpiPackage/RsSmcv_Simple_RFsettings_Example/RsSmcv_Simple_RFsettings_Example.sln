@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RsSmcv_Simple_RFsettings_Example", "RsSmcv_Simple_RFsettings_Example.csproj", "{2BC77A1F-30E4-4AE4-BD84-67D6B52AAB68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BC77A1F-30E4-4AE4-BD84-67D6B52AAB68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BC77A1F-30E4-4AE4-BD84-67D6B52AAB68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BC77A1F-30E4-4AE4-BD84-67D6B52AAB68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BC77A1F-30E4-4AE4-BD84-67D6B52AAB68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B64BCAE-0776-444D-A6E6-65A196A3EC75}
+	EndGlobalSection
+EndGlobal
