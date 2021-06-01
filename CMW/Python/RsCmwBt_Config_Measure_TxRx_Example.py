@@ -6,7 +6,7 @@
 
 from RsCmwBluetoothMeas import *  # install from pypi.org
 
-RsCmwBluetoothMeas.assert_minimum_version('3.7.90.18')
+RsCmwBluetoothMeas.assert_minimum_version('3.7.90.28')
 cmw_btm = RsCmwBluetoothMeas('TCPIP::10.112.1.116::INSTR', True, False)
 print(f'CMW Identification: {cmw_btm.utilities.idn_string}')
 
@@ -50,7 +50,7 @@ cmw_btm.configure.inputSignal.set_btype(enums.BurstType.LE)
 cmw_btm.configure.inputSignal.lowEnergy.set_phy(enums.LePhysicalType.LE1M)
 
 # CONFigure:BLUetooth:MEAS:ISIGnal:PTYPe:LENergy:LE1M ADV
-cmw_btm.configure.inputSignal.ptype.lowEnergy.set_le1m(enums.LePacketType.ADVertiser)
+cmw_btm.configure.inputSignal.ptype.lowEnergy.set_le_1_m(enums.LePacketType.ADVertiser)
 
 # CONFigure:BLUetooth:MEAS:RFSettings:FREQuency 2402
 cmw_btm.configure.rfSettings.set_frequency(2402)
@@ -62,7 +62,7 @@ cmw_btm.configure.rxQuality.set_aindex(37)
 cmw_btm.configure.multiEval.set_scondition(enums.StopCondition.NONE)
 
 # CONFigure:BLUetooth:MEAS:MEValuation:MOEXception OFF
-cmw_btm.configure.multiEval.set_moexception(False)
+cmw_btm.configure.multiEval.set_mo_exception(False)
 
 # CONFigure:BLUetooth:MEAS:TRX:RESult:ALL ON,ON,ON,ON
 trx_result = cmw_btm.configure.trx.result.AllStruct()
@@ -76,13 +76,13 @@ cmw_btm.configure.trx.result.set_all(trx_result)
 cmw_btm.configure.multiEval.scount.set_modulation(1)
 
 # CONFigure:BLUetooth:MEAS:MEValuation:SCOunt:PVTime 1
-cmw_btm.configure.multiEval.scount.set_powerVsTime(1)
+cmw_btm.configure.multiEval.scount.set_power_vs_time(1)
 
 # CONFigure:BLUetooth:MEAS:RXQuality:SADDress #H1234
 cmw_btm.configure.rxQuality.set_saddress('#H1234')
 
 # CONFigure:BLUetooth:MEAS:RXQuality:SATYpe PUBL
-cmw_btm.configure.rxQuality.set_satype(enums.AddressType.PUBLic)
+cmw_btm.configure.rxQuality.set_sa_type(enums.AddressType.PUBLic)
 
 # CONFigure:BLUetooth:MEAS:RXQuality:GARB ON
 cmw_btm.configure.rxQuality.set_garb(True)
@@ -121,14 +121,14 @@ pattern_type = cmw_btm.inputSignal.adetected.pattern.lowEnergy.le1M.fetch()
 # external attenuation and measurement mode.
 # *********************************************************************************
 
-# CONFigure:BLUetooth:MEAS:RXQuality:ROUTe R11,RX11
+# CONFigure:BLUetooth:MEAS:RXQuality:ROUTe R118,TX11
 routing = cmw_btm.configure.rxQuality.route.ValueStruct()
-routing.Rx_Connector = enums.RxConnector.R11
-routing.Rf_Converter = enums.RxConverter.RX11
+routing.Tx_Connector = enums.TxConnector.R118
+routing.Rf_Converter = enums.TxConverter.TX11
 cmw_btm.configure.rxQuality.route.set_value(routing)
 
 # CONFigure:BLUetooth:MEAS:RXQuality:ROUTe:USAGe:ALL R118,ON,OFF,OFF,OFF, OFF,OFF,OFF,OFF
-cmw_btm.configure.rxQuality.route.usage.all.set(enums.TXConnectorBench, [True, False, False, False, False, False, False, False])
+cmw_btm.configure.rxQuality.route.usage.all.set(enums.TxConnectorBench.R118, [True, False, False, False, False, False, False, False])
 
 # CONFigure:BLUetooth:MEAS:RXQuality:EATTenuation:OUTPut 5
 cmw_btm.configure.rxQuality.eattenuation.set_output(5)
@@ -140,7 +140,7 @@ cmw_btm.configure.rxQuality.set_mmode(enums.RxQualityMeasMode.SPOT)
 # *********************************************************************************
 
 # CONFigure:BLUetooth:MEAS:RXQuality:SPOTcheck:LEVel -40
-cmw_btm.configure.rxQuality.spotcheck.set_level(-40)
+cmw_btm.configure.rxQuality.spotCheck.set_level(-40)
 
 # *********************************************************************************
 # Set  trigger source to Bluetooth Meas:Power.
