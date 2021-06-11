@@ -3,7 +3,7 @@
 
 from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, see Readme.txt for more details
 
-RsInstrument.assert_minimum_version('1.13.0.61')
+RsInstrument.assert_minimum_version('1.13.0.63')
 instr = RsInstrument("ASRL4::INSTR", True, False, "DriverSetup=(TerminationCharacter='\r', WriteDelay=200, ReadDelay=0)")
 instr.write_str("*RST")
 idn = instr.query_str('*IDN?')
