@@ -14,7 +14,8 @@ print(f'RsInstrument driver version: {instr.driver_version}')
 print(f'Visa manufacturer: {instr.visa_manufacturer}')
 print(f'Instrument full name: {instr.full_instrument_model_name}')
 print(f'Instrument options: {instr.instrument_options}')
-print(f'Instrument options: {instr.instrument_options}')
+instr.visa_timeout = 2000
+
 
 # Close the session
 instr.close()
