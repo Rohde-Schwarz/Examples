@@ -1,6 +1,6 @@
 # Simple example on how to use the RsInstrument module for remote-controlling of your instrument
 # Preconditions:
-# - Installed RsInstrument Python module Version 1.12.1.60 or newer from pypi.org
+# - Installed RsInstrument Python module Version 1.14.0.65 or newer from pypi.org
 # - Installed VISA e.g. R&S Visa 5.12.x or newer
 
 from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, see Readme.txt for more details
@@ -17,7 +17,7 @@ option_string_force_ni_visa = 'SelectVisa=ni'  # Forcing NI VISA usage
 option_string_force_rs_visa = 'SelectVisa=rs'  # Forcing R&S VISA usage
 option_string_force_no_visa = 'SelectVisa=SocketIo'  # Socket communication for LAN connections, no need for any VISA installation
 
-RsInstrument.assert_minimum_version('1.12.1.60')
+RsInstrument.assert_minimum_version('1.14.0.65')
 instr = RsInstrument(resource_string_6, True, False, option_string_empty)
 
 idn = instr.query_str('*IDN?')

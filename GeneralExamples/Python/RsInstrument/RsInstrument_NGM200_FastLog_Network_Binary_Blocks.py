@@ -34,7 +34,7 @@ from time import sleep
 resource = 'TCPIP0::10.205.0.41::inst0::INSTR'  # VISA resource string for the device
 
 # Define the device handle, force selection of R&S VISA if available. If not, fall back to default VISA
-RsInstrument.assert_minimum_version('1.12.1.60')
+RsInstrument.assert_minimum_version('1.14.0.65')
 Instrument = RsInstrument(resource, True, True, "SelectVisa='rs'")
 """
 Initializes new RsInstrument session. \n
@@ -45,16 +45,6 @@ Parameter options tokens examples:
 - 'SelectVisa = 'rs' - forces usage of Rohde&Schwarz Visa
 - 'SelectVisa = 'ni' - forces usage of National Instruments Visa
 - 'QueryInstrumentStatus = False' - same as driver.utilities.instrument_status_checking = False. Default: True.
-- 'DriverSetup=(WriteDelay = 20, ReadDelay = 5)' - Introduces delay of 20ms before each write and 5ms before each read. Default: 0ms for both
-- 'DriverSetup=(OpcWaitMode = OpcQuery)' - mode for all the opc-synchronised write/reads. Other modes: StbPolling, StbPollingSlow, StbPollingSuperSlow. Default: StbPolling
-- 'DriverSetup=(AddTermCharToWriteBinBLock = True)' - Adds one additional LF to the end of the binary data (some instruments require that). Default: False
-- 'DriverSetup=(AssureWriteWithTermChar = True)' - Makes sure each command/query is terminated with termination character. Default: Interface dependent
-- 'DriverSetup=(TerminationCharacter = '\n')' - Sets the termination character for reading. Default: '\n' (LineFeed)
-- 'DriverSetup=(IoSegmentSize = 10E3)' - Maximum size of one write/read segment. If transferred data is bigger, it is split to more segments. Default: 1E6 bytes
-- 'DriverSetup=(OpcTimeout = 10000)' - same as driver.utilities.opc_timeout = 10000. Default: 30000ms
-- 'DriverSetup=(VisaTimeout = 5000)' - same as driver.utilities.visa_timeout = 5000. Default: 10000ms
-- 'DriverSetup=(ViClearExeMode = 255)' - Binary combination where 1 means performing viClear() on a certain interface as the very first command in init
-- 'DriverSetup=(OpcQueryAfterWrite = True)' - same as driver.utilities.opc_query_after_write = True. Default: False
 :param resource_name: VISA resource name, e.g. 'TCPIP::192.168.2.1::INSTR'
 :param id_query: if True: the instrument's model name is verified against the models supported by the driver and eventually throws an exception
 :param reset: Resets the instrument (sends *RST) command and clears its status syb-system

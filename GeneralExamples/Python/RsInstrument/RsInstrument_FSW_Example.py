@@ -1,16 +1,16 @@
 # Example for FSW / FSV / FSVA / FPS Spectrum Analyzers
 # Preconditions:
-# - Installed RsInstrument Python module Version 1.12.1.60 or newer from pypi.org
+# - Installed RsInstrument Python module Version 1.14.0.65 or newer from pypi.org
 # - Installed VISA e.g. R&S Visa 5.12.x or newer
 
 from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, see Readme.txt for more details
 from time import time
 
 specan = None
-RsInstrument.assert_minimum_version('1.12.1.60')
+RsInstrument.assert_minimum_version('1.14.0.65')
 try:
 	# Adjust the VISA Resource string to fit your instrument
-	specan = RsInstrument('TCPIP::192.168.1.10::INSTR', True, False)
+	specan = RsInstrument('TCPIP::localhost::INSTR', True, False)
 	specan.visa_timeout = 3000  # Timeout for VISA Read Operations
 	specan.opc_timeout = 3000  # Timeout for opc-synchronised operations
 	specan.instrument_status_checking = True  # Error check after each command
