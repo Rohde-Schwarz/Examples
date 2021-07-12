@@ -1,12 +1,12 @@
 # Example for RTO / RTE / RTP Oscilloscopes
 # Preconditions:
-# - Installed RsInstrument Python module Version 1.14.0.65 or newer from pypi.org
+# - Installed RsInstrument Python module Version 1.15.0.68 or newer from pypi.org
 # - Installed VISA e.g. R&S Visa 5.12.x or newer
 
 from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, see Readme.txt for more details
 from time import time
 
-RsInstrument.assert_minimum_version('1.14.0.65')
+RsInstrument.assert_minimum_version('1.15.0.68')
 rto = None
 try:
 	rto = RsInstrument('TCPIP::192.168.2.10::INSTR', True, False)

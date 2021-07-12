@@ -5,7 +5,7 @@ This Python example shows how to transfer waveform data (ASCII and binary format
 signal can be used for a simple test.
 
 Preconditions:
-- Installed RsInstrument Python module Version 1.14.0.65 or newer from pypi.org
+- Installed RsInstrument Python module Version 1.15.0.68 or newer from pypi.org
 - Installed VISA e.g. R&S Visa 5.12.x or newer
 
 Tested with:
@@ -33,7 +33,7 @@ from time import time
 
 def main():
 
-    RsInstrument.assert_minimum_version('1.14.0.65')
+    RsInstrument.assert_minimum_version('1.15.0.68')
     rth = None
     try:
         # adjust the VISA Resource string to fit your instrument
