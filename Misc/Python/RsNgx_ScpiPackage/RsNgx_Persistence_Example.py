@@ -38,10 +38,10 @@ ngx.output.general.set_state(True)
 time.sleep(0.5)
 
 # Read the measurement on both outputs:
-measurement = ngx_ch1.get_read()
+measurement = ngx_ch1.read()
 print(f'Measured values Output 1: {measurement.Voltage} V, {measurement.Current} A')
 # Output 2 is not ON, we get NAN readings
-measurement = ngx_ch2.get_read()
+measurement = ngx_ch2.read()
 print(f'Measured values Output 2: {measurement.Voltage} V, {measurement.Current} A')
 
 # In order to close the VISA session, you need to call the close() on the original object 'ngx'

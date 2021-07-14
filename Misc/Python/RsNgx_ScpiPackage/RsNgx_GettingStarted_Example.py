@@ -14,6 +14,7 @@ ngx.utilities.reset()
 #   OUTPut:GENeral:STATe OFF
 ngx.output.general.set_state(False)
 
+
 # Select and set Output 1
 #   INSTrument:SELect 1
 ngx.instrument.select.set(1)
@@ -45,12 +46,12 @@ time.sleep(0.5)
 #   INSTrument:SELect 1
 ngx.instrument.select.set(1)
 #                 READ?
-measurement = ngx.get_read()
+measurement = ngx.read()
 print(f'Measured values Output 1: {measurement.Voltage} V, {measurement.Current} A')
 
 #   INSTrument:SELect 2
 ngx.instrument.select.set(2)
 #                 READ?
-measurement = ngx.get_read()
+measurement = ngx.read()
 print(f'Measured values Output 2: {measurement.Voltage} V, {measurement.Current} A')
 ngx.close()
