@@ -6,9 +6,13 @@ Notice that the python RsSmw interfaces track the SCPI commands syntax."""
 from RsSmw import *
 
 # Open the session
-smw = RsSmw('TCPIP::10.112.1.67::HISLIP')
+smw = RsSmw('TCPIP::10.102.52.44::HISLIP')
 # Greetings, stranger...
 print(f'Hello, I am: {smw.utilities.idn_string}')
+
+# Print commands to the console with the logger
+smw.utilities.logger.mode = LoggingMode.On
+smw.utilities.logger.log_to_console = True
 
 #   OUTPut1:STATe ON
 smw.output.state.set_value(True)
