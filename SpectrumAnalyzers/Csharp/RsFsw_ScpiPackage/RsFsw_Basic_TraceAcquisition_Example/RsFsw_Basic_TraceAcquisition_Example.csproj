@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="RsFsw" Version="4.90.0.22" />
+  </ItemGroup>
+
 </Project>

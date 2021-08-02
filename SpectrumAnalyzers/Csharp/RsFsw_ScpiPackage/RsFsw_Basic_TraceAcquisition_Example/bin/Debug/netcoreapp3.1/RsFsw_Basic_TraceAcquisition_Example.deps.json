@@ -7,8 +7,19 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "RsFsw_Basic_TraceAcquisition_Example/1.0.0": {
+        "dependencies": {
+          "RsFsw": "4.90.0.22"
+        },
         "runtime": {
           "RsFsw_Basic_TraceAcquisition_Example.dll": {}
+        }
+      },
+      "RsFsw/4.90.0.22": {
+        "runtime": {
+          "lib/netcoreapp3.1/RsFsw.dll": {
+            "assemblyVersion": "4.90.0.22",
+            "fileVersion": "4.90.0.22"
+          }
         }
       }
     }
@@ -18,6 +29,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "RsFsw/4.90.0.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BtsW7eUDKH6SbTn66kXH2xLoiOBkJweS6K0Z7EZlrs1xFpmg8nQU2beAg5qvzf8MzKpdnigAYUgSnRJqxdwsJQ==",
+      "path": "rsfsw/4.90.0.22",
+      "hashPath": "rsfsw.4.90.0.22.nupkg.sha512"
     }
   }
 }

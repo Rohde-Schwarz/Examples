@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "79t/JfIrhKyVux4sGn+Z6Bdm6AJ+bEQy+GuDM6QGU4VYM1gaTSA6hj2bD36yTTUNVBIkwBSR+3TzOZ2jC/1ihg==",
+  "dgSpecHash": "C72cC4HJDsfmYatZSKoaGHi3FvTs22fzw1Llcz/MiZ56CUJpFxGzO/Ym9QpdLA4csgbM8qzfzC9mzTZZIogKgw==",
   "success": true,
-  "projectFilePath": "c:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\RsFsw_Basic_TraceAcquisition_Example.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\RsFsw_Basic_TraceAcquisition_Example.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Macko\\.nuget\\packages\\rsfsw\\4.90.0.22\\rsfsw.4.90.0.22.nupkg.sha512"
+  ],
   "logs": []
 }

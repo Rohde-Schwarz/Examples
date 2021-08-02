@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\RsFsw_Basic_TraceAcquisition_Example.csproj": {}
+    "C:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\RsFsw_Basic_TraceAcquisition_Example.csproj": {}
   },
   "projects": {
-    "c:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\RsFsw_Basic_TraceAcquisition_Example.csproj": {
+    "C:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\RsFsw_Basic_TraceAcquisition_Example.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\RsFsw_Basic_TraceAcquisition_Example.csproj",
+        "projectUniqueName": "C:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\RsFsw_Basic_TraceAcquisition_Example.csproj",
         "projectName": "RsFsw_Basic_TraceAcquisition_Example",
-        "projectPath": "c:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\RsFsw_Basic_TraceAcquisition_Example.csproj",
+        "projectPath": "C:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\RsFsw_Basic_TraceAcquisition_Example.csproj",
         "packagesPath": "C:\\Users\\Macko\\.nuget\\packages\\",
-        "outputPath": "c:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\obj\\",
+        "outputPath": "C:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -43,6 +43,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "RsFsw": {
+              "target": "Package",
+              "version": "[4.90.0.22, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

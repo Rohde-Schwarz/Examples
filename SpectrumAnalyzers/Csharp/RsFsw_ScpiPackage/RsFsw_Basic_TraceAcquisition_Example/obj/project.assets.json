@@ -1,11 +1,45 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "RsFsw/4.90.0.22": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/RsFsw.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/RsFsw.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "RsFsw/4.90.0.22": {
+      "sha512": "BtsW7eUDKH6SbTn66kXH2xLoiOBkJweS6K0Z7EZlrs1xFpmg8nQU2beAg5qvzf8MzKpdnigAYUgSnRJqxdwsJQ==",
+      "type": "package",
+      "path": "rsfsw/4.90.0.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.txt",
+        "icon.png",
+        "lib/net45/RsFsw.dll",
+        "lib/net45/RsFsw.xml",
+        "lib/net48/RsFsw.dll",
+        "lib/net48/RsFsw.xml",
+        "lib/netcoreapp3.1/RsFsw.dll",
+        "lib/netcoreapp3.1/RsFsw.xml",
+        "lib/netstandard2.1/RsFsw.dll",
+        "lib/netstandard2.1/RsFsw.xml",
+        "rsfsw.4.90.0.22.nupkg.sha512",
+        "rsfsw.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "RsFsw >= 4.90.0.22"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Macko\\.nuget\\packages\\": {},
@@ -14,11 +48,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\RsFsw_Basic_TraceAcquisition_Example.csproj",
+      "projectUniqueName": "C:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\RsFsw_Basic_TraceAcquisition_Example.csproj",
       "projectName": "RsFsw_Basic_TraceAcquisition_Example",
-      "projectPath": "c:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\RsFsw_Basic_TraceAcquisition_Example.csproj",
+      "projectPath": "C:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\RsFsw_Basic_TraceAcquisition_Example.csproj",
       "packagesPath": "C:\\Users\\Macko\\.nuget\\packages\\",
-      "outputPath": "c:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\obj\\",
+      "outputPath": "C:\\DriverTests\\Examples\\SpectrumAnalyzers\\Csharp\\RsFsw_ScpiPackage\\RsFsw_Basic_TraceAcquisition_Example\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -50,6 +84,12 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "dependencies": {
+          "RsFsw": {
+            "target": "Package",
+            "version": "[4.90.0.22, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
