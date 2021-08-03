@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "RsFsw/4.90.0.22": {
+      "RsFsw/4.90.0.26": {
         "type": "package",
         "compile": {
           "lib/netcoreapp3.1/RsFsw.dll": {}
@@ -14,10 +14,10 @@
     }
   },
   "libraries": {
-    "RsFsw/4.90.0.22": {
-      "sha512": "BtsW7eUDKH6SbTn66kXH2xLoiOBkJweS6K0Z7EZlrs1xFpmg8nQU2beAg5qvzf8MzKpdnigAYUgSnRJqxdwsJQ==",
+    "RsFsw/4.90.0.26": {
+      "sha512": "tF016LqD/aOtJTWOxfNwBt8XWtYSjExmS9TlcScAfzkphtB7m7loD04ooq2M6IFBVoDAa+tql2IUfGu4oTLOew==",
       "type": "package",
-      "path": "rsfsw/4.90.0.22",
+      "path": "rsfsw/4.90.0.26",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -31,14 +31,14 @@
         "lib/netcoreapp3.1/RsFsw.xml",
         "lib/netstandard2.1/RsFsw.dll",
         "lib/netstandard2.1/RsFsw.xml",
-        "rsfsw.4.90.0.22.nupkg.sha512",
+        "rsfsw.4.90.0.26.nupkg.sha512",
         "rsfsw.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "RsFsw >= 4.90.0.22"
+      "RsFsw >= 4.90.0.26"
     ]
   },
   "packageFolders": {
@@ -87,7 +87,7 @@
         "dependencies": {
           "RsFsw": {
             "target": "Package",
-            "version": "[4.90.0.22, )"
+            "version": "[4.90.0.26, )"
           }
         },
         "imports": [
