@@ -11,15 +11,13 @@ namespace RsFsw_Basic_TraceAcquisition_Example
         static void Main(string[] args)
         {
             var fsw = new RsFsw("TCPIP::localhost::HISLIP", true, true, "PreferRsVisa=True");
-
+           
             // Greetings, stranger...
             Console.WriteLine($"Hello, I am: {fsw.Utilities.Identification.IdnString}");
 
             // Select or create the Specan Channel 
             fsw.Instrument.Select.Value = ChannelTypeEnum.SpectrumAnalyzer;
 
-            fsw.Instrument.Select.Value = ChannelTypeEnum.K7_AnalogModulation;
-            var name = fsw.K7AnalogDemod.Layout.Add.Window.Get("Janik", WindowDirectionEnum.BELow, WindowTypeK7enum.AmTimeDomain);
             //   INITiate:CONTinuous
             fsw.Initiate.Continuous.Set(false);
             Console.WriteLine($"We always work in single-sweep mode around here!");
