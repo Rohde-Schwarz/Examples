@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RsFsw_Basic_TraceAcquisition_Example", "RsFsw_Basic_TraceAcquisition_Example.csproj", "{D3F81AA4-7A8D-4DBB-93CB-DEB92AA85B06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RsFsw_HardcopySaveRecall_Example", "RsFsw_HardcopySaveRecall_Example.csproj", "{AB1D11E6-8DC7-43A8-935C-E8BA870EC0A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D3F81AA4-7A8D-4DBB-93CB-DEB92AA85B06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D3F81AA4-7A8D-4DBB-93CB-DEB92AA85B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D3F81AA4-7A8D-4DBB-93CB-DEB92AA85B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D3F81AA4-7A8D-4DBB-93CB-DEB92AA85B06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB1D11E6-8DC7-43A8-935C-E8BA870EC0A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB1D11E6-8DC7-43A8-935C-E8BA870EC0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB1D11E6-8DC7-43A8-935C-E8BA870EC0A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB1D11E6-8DC7-43A8-935C-E8BA870EC0A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {503B4481-71DD-474F-878C-EDC5D163DE78}
+		SolutionGuid = {A92808DA-C139-469F-B7E0-89A7D22AF2EA}
 	EndGlobalSection
 EndGlobal

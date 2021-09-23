@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RsFsw" Version="4.90.0.36" />
+    <PackageReference Include="RsFsw" Version="4.90.0.75" />
   </ItemGroup>
 
 </Project>
