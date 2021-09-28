@@ -52,7 +52,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Program Files\IVI Foundation\IVI\Microsoft.NET\Framework64\v2.0.50727\IviFoundationSharedComponents 1.4.1\Ivi.Driver.dll</HintPath>
     </Reference>
-    <Reference Include="RohdeSchwarz.RsZnx.Fx40, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21acc6a002277cd7, processorArchitecture=x86" />
+    <Reference Include="RohdeSchwarz.RsZnx.Fx40, Version=3.30.0.0, Culture=neutral, PublicKeyToken=21acc6a002277cd7, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />

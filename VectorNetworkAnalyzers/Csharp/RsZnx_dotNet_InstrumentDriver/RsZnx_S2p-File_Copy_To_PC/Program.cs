@@ -2,8 +2,8 @@
 // The basis for this program is a python plain SCPI script that you can find here:
 // https://github.com/Rohde-Schwarz/Examples/blob/main/GeneralExamples/Python/RsInstrument/RsInstrument_ZNB_S2P-file_copy_to_PC.py
 // Preconditions:
-// - installed RsZnx IVI.NET instrument driver
-// - installed RsVisa 5.12+ or any other Visa
+// - installed RsZnx IVI.NET instrument driver 3.30.0 or newer
+// - installed R&S VISA 5.12.3+ or any other VISA
 
 using System;
 using System.IO;
@@ -20,7 +20,7 @@ namespace RsZnx_S2p_File_Copy_To_PC
         {
             var io = new RsZnx("TCPIP::10.205.0.172::INSTR", true, true, "DriverSetup=(PreferRsVisa = True)");
             // RF Setup first
-            io.GeneralSettings.DisplayUpdateEnabled = true;
+            io.GeneralSettings.DisplayUpdateEnabled = DisplayUpdate.On;
             var channel1 = io.Channel.Channels["CH1"];
             channel1.Stimulus.FrequencyStart = 700E6;
             channel1.Stimulus.FrequencyStop = 1.3E9;

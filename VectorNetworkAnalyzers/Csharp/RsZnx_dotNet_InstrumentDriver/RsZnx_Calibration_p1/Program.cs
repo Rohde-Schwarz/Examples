@@ -2,8 +2,8 @@
 // The basis for this program is a python plain SCPI script that you can find here:
 // https://github.com/Rohde-Schwarz/Examples/blob/main/GeneralExamples/Python/RsInstrument/RsInstrument_ZNB_CAL_P1.py
 // Preconditions:
-// - installed RsZnx IVI.NET instrument driver
-// - installed RsVisa 5.12+ or any other Visa
+// - installed RsZnx IVI.NET instrument driver 3.30.0 or newer
+// - installed R&S VISA 5.12.3+ or any other VISA
 
 using System;
 using System.Collections.Generic;
@@ -19,7 +19,7 @@ namespace RsZnx_calibration_p1
         {
             var io = new RsZnx("TCPIP::192.168.1.101::INSTR", true, true);
             // RF Setup first
-            io.GeneralSettings.DisplayUpdateEnabled = true;
+            io.GeneralSettings.DisplayUpdateEnabled = DisplayUpdate.On;
             var channel1 = io.Channel.Channels["CH1"];
             channel1.Stimulus.FrequencyStart = 1E9;
             channel1.Stimulus.FrequencyStop = 2E9;
@@ -30,16 +30,16 @@ namespace RsZnx_calibration_p1
             var calibCh1 = channel1.Calibration;
             calibCh1.SelectCalibrationKit(ConnectorKit.PC292, "ZN-Z229");
             calibCh1.SelectCalibrationType("NewCal", CalibrationType.ReflOSM, new int[] { 1 }, "");
-            io.System.WriteCommandWithOPCSync("SENSe:CORRection:COLLect:ACQuire:RSAVe:DEFault OFF");
+            io.System.WriteCommandWithOPCSync("SENSe:CORRection:COLLect:ACQuire:RSAVe:DEFault OFF", 0);
 
             Console.WriteLine("Connect OPEN to port 1 and press any key to start the calibration ...");
-            channel1.Calibration.StartCalibration(CalibrationStandard.Open, new int[] { 1 }, true, false, 0, new Ivi.Driver.PrecisionTimeSpan(20));
+            channel1.Calibration.StartCalibration(CalibrationStandard.Open, new int[] { 1 }, true, false, false, 0, new Ivi.Driver.PrecisionTimeSpan(20));
 
             Console.WriteLine("Connect SHORT to port 1 and press any key to start the calibration ...");
-            calibCh1.StartCalibration(CalibrationStandard.Short, new int[] { 1 }, true, false, 0, new Ivi.Driver.PrecisionTimeSpan(20));
+            calibCh1.StartCalibration(CalibrationStandard.Short, new int[] { 1 }, true, false, false, 0, new Ivi.Driver.PrecisionTimeSpan(20));
 
             Console.WriteLine("Connect MATCH to port 1 and press any key to start the calibration ...");
-            calibCh1.StartCalibration(CalibrationStandard.Match, new int[] { 1 }, true, false, 0, new Ivi.Driver.PrecisionTimeSpan(20));
+            calibCh1.StartCalibration(CalibrationStandard.Match, new int[] { 1 }, true, false, false, 0, new Ivi.Driver.PrecisionTimeSpan(20));
 
             calibCh1.SaveCalibrationData();
             calibCh1.CalibrationManager(CalManagerOperation.Copy, "NEWCAL.cal", null);

@@ -44,7 +44,7 @@ namespace rsznx_assigning_channels_example
                         driver.System.Reset();
 
                     /* switch device display on/off */
-                    driver.GeneralSettings.DisplayUpdateEnabled = DisplayEnable.Checked;
+                    driver.GeneralSettings.DisplayUpdateEnabled = DisplayUpdate.On;
 
                     /* Add a new channel if it doesn't exist */
                     driver.Channel.AddChannel(Convert.ToInt32(Channel.Value), "");

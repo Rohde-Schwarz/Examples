@@ -1,4 +1,8 @@
-﻿Imports RohdeSchwarz.RsZnx
+﻿' Preconditions:
+' - installed RsZnx IVI.NET instrument driver 3.30.0 or newer
+' - installed R&S VISA 5.12.3+ or any other VISA '
+
+Imports RohdeSchwarz.RsZnx
 Imports Ivi.Driver
 
 Module Module1
