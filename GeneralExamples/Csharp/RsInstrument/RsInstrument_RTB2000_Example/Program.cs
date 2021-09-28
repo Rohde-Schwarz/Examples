@@ -16,7 +16,7 @@ namespace RsInstrument_RTB2000_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.12.0");
+            RsInstrument.AssertMinVersion("1.13.0");
 
             try // Separate try-catch for initialization prevents accessing uninitialized object
             {
