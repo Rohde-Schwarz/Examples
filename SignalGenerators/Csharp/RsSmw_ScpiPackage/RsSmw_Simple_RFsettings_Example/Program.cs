@@ -36,8 +36,8 @@ namespace RsSmw_Example
             var smwB = smw.Clone();
             smwB.RepCapHwInstance = HwInstanceRepCap.InstB;
 
-            // Now we have two independent objects for two RF Outputs - driver and driverRf2
-			// They share some common features of the instrument, like for example Resetting
+            // Now we have two independent objects for two RF Outputs - smw and smwB
+            // They share some common features of the instrument, like for example resetting
             smw.Utilities.Reset();
 
             // Set the Output A to CW -20 dBm, 223 MHz
