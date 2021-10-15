@@ -30,7 +30,7 @@ from time import sleep
 # Predefine variables
 resource = 'TCPIP0::10.205.0.30::INSTR'  # VISA resource string for the device
 
-RsInstrument.assert_minimum_version('1.17.0.72')  # Ensure to use a dedicated minimum version of RsInstrument
+RsInstrument.assert_minimum_version('1.18.0.73')  # Ensure to use a dedicated minimum version of RsInstrument
 # Define the device handle
 # Instrument = RsInstrument(resource)
 Instrument = RsInstrument(resource, True, True, "SelectVisa='rs'")
