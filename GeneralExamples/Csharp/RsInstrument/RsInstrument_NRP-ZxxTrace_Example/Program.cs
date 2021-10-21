@@ -16,7 +16,7 @@ namespace RsInstrument_NrpZxx_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.14.0");
+            RsInstrument.AssertMinVersion("1.15.0");
 
             try // Separate try-catch for initialization prevents accessing uninitialized object
             {
