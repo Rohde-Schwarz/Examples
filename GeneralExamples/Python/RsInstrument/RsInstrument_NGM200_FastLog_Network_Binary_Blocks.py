@@ -34,7 +34,7 @@ from time import sleep
 resource = 'TCPIP0::10.205.0.41::inst0::INSTR'  # VISA resource string for the device
 
 # Define the device handle, force selection of R&S VISA if available. If not, fall back to default VISA
-RsInstrument.assert_minimum_version('1.18.0.73')
+RsInstrument.assert_minimum_version('1.19.0.75')
 Instrument = RsInstrument(resource, True, True, "SelectVisa='rs'")
 """
 Initializes new RsInstrument session. \n
