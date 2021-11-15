@@ -8,7 +8,7 @@ Date of last change:        2021/11/08
 Requires:                   R&S ZNB, FW 3.12 or newer and adequate options
                             Installed VISA e.g. R&S Visa 5.12.x or newer
 
-Description:    Example for remote calibration with robot support to feed the calibration elements.
+Description:    Example for ZNx segmented sweep performed on one channel
 
 
 General Information:
@@ -16,7 +16,7 @@ General Information:
 Please always check this example script for unsuitable setting that may
 destroy your DUT befor connecting it to the instrument!
 This example does not claim to be complete. All information has been
-compiled with care. However errors can not be ruled out. 
+compiled with care. However errors can not be ruled out.
 """
 
 # --> Import necessary packets  
@@ -79,6 +79,8 @@ def meassetup():
     Instrument.write_str_with_opc('TRIGger:SEQuence:SOURce IMMediate')                              # Trigger immediate (Auto)
     Instrument.write_str_with_opc('AVERage OFF')                                                    # Averaging disabled
     Instrument.write_str_with_opc('SEGment:CLEar')                                                  # Deletes all sweep segments in the channel
+    Instrument.write_str_with_opc('FREQuency:MODE SEGMent')                                         # Change mode to frequency segmented operations
+
     #
     # Define Segment 1
     #
@@ -88,7 +90,7 @@ def meassetup():
     Instrument.write_str_with_opc('SEGMent1:SWEep:POINts 401')                                      # No of Sweep Points
     Instrument.write_str_with_opc('SEGMent1:POWer:LEVel 10')                                        # Output Power Level
     Instrument.write_str_with_opc('SEGMent1:BWIDth 500Hz')                                          # RBW
-    Instrument.write_str_with_opc('FREQuency:MODE SEGMent')                                         # Change mode to frequency segmented operations
+
     #
     # Define Segment 2
     #
@@ -98,7 +100,6 @@ def meassetup():
     Instrument.write_str_with_opc('SEGMent2:SWEep:POINts 501')                                      # No of Sweep Points
     Instrument.write_str_with_opc('SEGMent2:POWer:LEVel 0')                                         # Output Power Level
     Instrument.write_str_with_opc('SEGMent2:BWIDth 1000Hz')                                         # RBW
-    Instrument.write_str_with_opc('FREQuency:MODE SEGMent')                                         # Change mode to frequency segmented operations
 
 
 def measure():
