@@ -47,7 +47,7 @@ sleep(1)                                                                        
 def comprep():
     """Preparation of the communication (termination, etc...)"""
 
-    print(f'VISA Manufacturer: {Instrument.visa_manufacturer}')     # Confirm VISA package to be choosen
+    print(f'VISA Manufacturer: {Instrument.visa_manufacturer}')     # Confirm VISA package to be chosen
     Instrument.visa_timeout = 5000                                  # Timeout for VISA Read Operations
     Instrument.opc_timeout = 5000                                   # Timeout for opc-synchronised operations
     Instrument.instrument_status_checking = True                    # Error check after each command, can be True or False
@@ -79,34 +79,65 @@ def meassetup():
     Instrument.write_str_with_opc('TRIGger:SEQuence:SOURce IMMediate')                              # Trigger immediate (Auto)
     Instrument.write_str_with_opc('AVERage OFF')                                                    # Averaging disabled
     Instrument.write_str_with_opc('SEGment:CLEar')                                                  # Deletes all sweep segments in the channel
-    Instrument.write_str_with_opc('FREQuency:MODE SEGMent')                                         # Change mode to frequency segmented operations
 
     #
-    # Define Segment 1
+    # Define Segment 1 for CH1
     #
-    Instrument.write_str_with_opc('SEGMent1:ADD')                                                   # Add Segment 1
-    Instrument.write_str_with_opc('SEGMent1:FREQuency:STARt 500MHz')                                # Start Frequency
-    Instrument.write_str_with_opc('SEGMent1:FREQuency:STOP 900MHz')                                 # Stop Frequency
-    Instrument.write_str_with_opc('SEGMent1:SWEep:POINts 401')                                      # No of Sweep Points
-    Instrument.write_str_with_opc('SEGMent1:POWer:LEVel 10')                                        # Output Power Level
-    Instrument.write_str_with_opc('SEGMent1:BWIDth 500Hz')                                          # RBW
+
+    # Ch1 Trc1 already exists by default
+    Instrument.write_str_with_opc("CALCULATE1:PARAMETER:SDEFINE 'Trc1', 'S22'")                             # Reconfigure the trace Trc1 to S22
+    Instrument.write_str_with_opc("DISPLAY:WINDOW1:TRACE:EFEED 'Trc1'")                                     # Feed it again to the window
+
+    Instrument.write_str_with_opc("SENSe1:SEGMent1:ADD")                                            # Add Segment 1
+    Instrument.write_str_with_opc("SENSe1:SEGMent1:FREQuency:STARt 500MHz")                         # Start Frequency
+    Instrument.write_str_with_opc("SENSe1:SEGMent1:FREQuency:STOP 900MHz")                          # Stop Frequency
+    Instrument.write_str_with_opc("SENSe1:SEGMent1:SWEep:POINts 401")                               # No of Sweep Points
+    Instrument.write_str_with_opc("SENSe1:SEGMent1:POWer:LEVel 10")                                 # Output Power Level
+    Instrument.write_str_with_opc("SENSe1:SEGMent1:BWIDth 500Hz")                                   # RBW
 
     #
-    # Define Segment 2
+    # Define Segment 2 for CH1
     #
-    Instrument.write_str_with_opc('SEGMent2:ADD')                                                   # Add Segment 2
-    Instrument.write_str_with_opc('SEGMent2:FREQuency:STARt 1200MHz')                               # Start Frequency
-    Instrument.write_str_with_opc('SEGMent2:FREQuency:STOP 2400MHz')                                # Stop Frequency
-    Instrument.write_str_with_opc('SEGMent2:SWEep:POINts 501')                                      # No of Sweep Points
-    Instrument.write_str_with_opc('SEGMent2:POWer:LEVel 0')                                         # Output Power Level
-    Instrument.write_str_with_opc('SEGMent2:BWIDth 1000Hz')                                         # RBW
+    # Using the complete command including "SENSe" will define the channel the changes will be associated to
+    Instrument.write_str_with_opc("SENSe1:SEGMent2:ADD")                                            # Add Segment 2
+    Instrument.write_str_with_opc("SENSe1:SEGMent2:FREQuency:STARt 1200MHz")                        # Start Frequency
+    Instrument.write_str_with_opc("SENSe1:SEGMent2:FREQuency:STOP 2400MHz")                         # Stop Frequency
+    Instrument.write_str_with_opc("SENSe1:SEGMent2:SWEep:POINts 501")                               # No of Sweep Points
+    Instrument.write_str_with_opc("SENSe1:SEGMent2:POWer:LEVel 0")                                  # Output Power Level
+    Instrument.write_str_with_opc("SENSe1:SEGMent2:BWIDth 1000Hz")                                  # RBW
 
 
 def measure():
     """ Initiate sweep and capture measurement data"""
+    Instrument.write_str_with_opc('SWEep:TYPE SEGMent')                                             # Segmented sweep mode
     Instrument.write_str_with_opc('INIT')
     data = Instrument.query_str('CALCulate:DATA? SDATa')
     print(data)
+
+    #
+    # Add markers and get the results for CH1
+    #
+    Instrument.write_str_with_opc("CALCulate1:MARKer1:STATe ON")  # Activate Marker 1
+    Instrument.write_str_with_opc("CALCulate1:Marker1:FUNCtion:EXECute MINimum")  # Assign Minimum Function to Marker 1
+    resmark1 = Instrument.query_str("CALCulate1:MARKer1:FUNCtion:RESult?")  # Read the result X,Y
+    print(f"Result for CH1 Marker 1 (maximum) is: {resmark1} dB")
+
+    Instrument.write_str_with_opc("CALCulate1:MARKer2:STATe ON")  # Activate Marker 2
+    Instrument.write_str_with_opc("CALCulate1:Marker2:FUNCtion:EXECute MAXimum")  # Assign Maximum Function to Marker 2
+    resmark2 = Instrument.query_str("CALCulate1:MARKer2:FUNCtion:RESult?")  # Read the result
+    print(f"Result for CH1 Marker 2 (minimum) is: {resmark2} dB")
+
+    Instrument.write_str_with_opc("CALCulate1:MARKer3:STATe ON")  # Activate Marker 3
+    Instrument.write_str_with_opc("CALCulate1:Marker3:X 2 GHz")  # Set to a dedicated Frequency
+    resmark3 = Instrument.query_float(f"CALCulate1:MARKer3:Y?")  # Read the Y result
+    print(f"Result for CH1 Marker 3 on 2 GHz is: {resmark3:0.3f} dB")
+
+    #
+    # Get Trace Data for CH1
+    #
+
+    data = Instrument.query_bin_or_ascii_float_list("FORM REAL,32;CALCulate1:DATA? SDATa")
+    print("CH1 Trace Result Data is: ", data)
 
 
 # ---------------------------

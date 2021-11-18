@@ -1,6 +1,6 @@
-﻿// This program performs segmented sweep on a ZNx Vector Signal Generator.
+﻿// This program performs segmented sweep for 1 Channel on a ZNx Vector Signal Generator.
 // The basis for this program is a python plain SCPI script that you can find here:
-// https://github.com/Rohde-Schwarz/Examples/blob/main/GeneralExamples/Python/RsInstrument/RsInstrument_ZNB_CAL_P1.py
+// https://github.com/Rohde-Schwarz/Examples/blob/main/VectorNetworkAnalyzers/Python/RsInstrument/RsInstrument_ZNB_Segmented_Sweep.py
 // Preconditions:
 // - installed RsZnx IVI.NET instrument driver 3.35.0 or newer
 // - installed R&S VISA 5.12.3+ or any other VISA
@@ -24,8 +24,14 @@ namespace RsZnx_Segmented_Sweep
             // Be sure to have the display updated whilst remote control
             io.GeneralSettings.DisplayUpdateEnabled = DisplayUpdate.On;
 
-            // We will be addressing the Channel 1
+            // We are addressing the Channel 1
             var ch1 = io.Channel.Channels[RepCapChannel.CH1];
+
+            // Channel 1, Diagram 1 and Trace 1 (Name 'Trc1') exist already by default
+            // Change the Trc1 Type to S11
+            ch1.Trace.AddTrace("Trc1", "'S11'");
+            ch1.Trace.AssignTraceDiagramArea("Trc1", 1);
+
             // Set single sweep mode
             ch1.Sweep.ContinuousMode = false;
 
@@ -59,13 +65,33 @@ namespace RsZnx_Segmented_Sweep
             sgm2.Power = 0;
             sgm2.Bandwidth = 1000;
 
-            // Measurement
-
             // Change mode to frequency segmented operations
             ch1.Sweep.Type = SweepType.Segmented;
+            
+            // Start the sweep
             ch1.Sweep.StartSynchronized();
+
+            // Read the results - trace
             var data = ch1.Trace.TraceData.ResponseData(DataFormat.Unformatted);
             Console.WriteLine(string.Join(", ", data.Select(x => x.ToString("F3"))));
+
+            // Marker Max
+            ch1.Marker[RepCapMarker.Mk1].Enabled = true;
+            ch1.Marker[RepCapMarker.Mk1].Search.MarkerSearch(MarkerSearch.Maximum);
+            var resultMkMax = ch1.Marker[RepCapMarker.Mk1].Search.Result();
+            Console.WriteLine($"Marker 1 Max: {resultMkMax.stimulus:F3} Hz, {resultMkMax.response[0]:F3} dB");
+
+            // Marker Min
+            ch1.Marker[RepCapMarker.Mk2].Enabled = true;
+            ch1.Marker[RepCapMarker.Mk2].Search.MarkerSearch(MarkerSearch.Minimum);
+            var resultMkMin = ch1.Marker[RepCapMarker.Mk2].Search.Result();
+            Console.WriteLine($"Marker 2 Min: {resultMkMin.stimulus:F3} Hz, {resultMkMin.response[0]:F3} dB");
+
+            // Marker concrete frequency
+            ch1.Marker[RepCapMarker.Mk3].Enabled = true;
+            ch1.Marker[RepCapMarker.Mk3].Stimulus = 2E9;
+            var resultMkDed = ch1.Marker[RepCapMarker.Mk3].Response;
+            Console.WriteLine($"Marker 3 concrete: 2 GHz, {resultMkDed:F3} dB");
 
             Console.WriteLine("\nPress any key to finish");
             Console.ReadKey();
