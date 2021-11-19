@@ -1,3 +1,4 @@
+# github examples repository path: SpectrumAnalyzers/Python/RsInstrument
 # Example for FSW / FSV / FSVA / FPS Spectrum Analyzers
 # Preconditions:
 # - Installed RsInstrument Python module Version 1.19.0.75 or newer from pypi.org

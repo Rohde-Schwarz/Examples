@@ -1,4 +1,6 @@
 """
+# github examples repository path: VectorNetworkAnalyzers/Python/RsInstrument
+
 Created 2021/05
 
 Author:                     Jahns_P
@@ -30,6 +32,9 @@ resource = 'TCPIP0::10.205.0.172::INSTR'                                        
 s2p_filename = r'C:\Users\Public\Documents\Rohde-Schwarz\Vna\Traces\s2pfile.s2p'          # Name and path of the s2p file on the instrument
 pc_filename = r'C:\Tempdata\pcs2pfile.s2p'                                                # Name and path of the s2p file on the PC
 
+
+# Make sure you have the last version of the RsInstrument
+RsInstrument.assert_minimum_version('1.19.0.75')
 
 # Define the device handle
 # Instrument = RsInstrument(resource)

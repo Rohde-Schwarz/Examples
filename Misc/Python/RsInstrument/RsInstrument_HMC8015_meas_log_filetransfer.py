@@ -37,8 +37,10 @@ pagenum = 1  # Number of the display page to be logged
 logdur = 2  # Log time in seconds
 log_file_name = 'LOG1234.CSV'  # Name of the log file
 
-# Define the device handle
+# Make sure you have the last version of the RsInstrument
 RsInstrument.assert_minimum_version('1.19.0.75')
+
+# Define the device handle
 HMC8015 = RsInstrument(ressource, True, True, "SelectVisa='rs'")
 """
 (ressource, True, True, "SelectVisa='rs'") has the following meaning:

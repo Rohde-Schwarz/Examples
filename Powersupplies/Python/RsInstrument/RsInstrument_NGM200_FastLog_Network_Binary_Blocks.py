@@ -1,4 +1,5 @@
 """
+# github examples repository path: Powersupplies/Python/RsInstrument
 
 Created 2021/03
 
@@ -33,8 +34,10 @@ from time import sleep
 # Define variables
 resource = 'TCPIP0::10.205.0.41::inst0::INSTR'  # VISA resource string for the device
 
-# Define the device handle, force selection of R&S VISA if available. If not, fall back to default VISA
+# Make sure you have the last version of the RsInstrument
 RsInstrument.assert_minimum_version('1.19.0.75')
+
+# Define the device handle, force selection of R&S VISA if available. If not, fall back to default VISA
 Instrument = RsInstrument(resource, True, True, "SelectVisa='rs'")
 """
 Initializes new RsInstrument session. \n

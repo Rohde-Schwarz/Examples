@@ -17,6 +17,7 @@ option_string_force_ni_visa = 'SelectVisa=ni'  # Forcing NI VISA usage
 option_string_force_rs_visa = 'SelectVisa=rs'  # Forcing R&S VISA usage
 option_string_force_no_visa = 'SelectVisa=SocketIo'  # Socket communication for LAN connections, no need for any VISA installation
 
+# Make sure you have the last version of the RsInstrument
 RsInstrument.assert_minimum_version('1.19.0.75')
 instr = RsInstrument(resource_string_6, True, False, option_string_empty)
 

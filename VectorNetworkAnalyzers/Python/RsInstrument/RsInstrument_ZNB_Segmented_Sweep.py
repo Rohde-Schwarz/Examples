@@ -1,4 +1,5 @@
 """
+# github examples repository path: VectorNetworkAnalyzers/Python/RsInstrument
 
 Created 2021/11
 
@@ -26,6 +27,8 @@ from time import sleep
 # Define variables
 resource = 'TCPIP0::10.205.0.51::INSTR'                                                  # VISA resource string for the device
 
+# Make sure you have the last version of the RsInstrument
+RsInstrument.assert_minimum_version('1.19.0.75')
 
 # Define the device handle
 # Instrument = RsInstrument(resource)
@@ -85,8 +88,8 @@ def meassetup():
     #
 
     # Ch1 Trc1 already exists by default
-    Instrument.write_str_with_opc("CALCULATE1:PARAMETER:SDEFINE 'Trc1', 'S22'")                             # Reconfigure the trace Trc1 to S22
-    Instrument.write_str_with_opc("DISPLAY:WINDOW1:TRACE:EFEED 'Trc1'")                                     # Feed it again to the window
+    Instrument.write_str_with_opc("CALCULATE1:PARAMETER:SDEFINE 'Trc1', 'S22'")                     # Reconfigure the trace Trc1 to S22
+    Instrument.write_str_with_opc("DISPLAY:WINDOW1:TRACE:EFEED 'Trc1'")                             # Feed it again to the window
 
     Instrument.write_str_with_opc("SENSe1:SEGMent1:ADD")                                            # Add Segment 1
     Instrument.write_str_with_opc("SENSe1:SEGMent1:FREQuency:STARt 500MHz")                         # Start Frequency

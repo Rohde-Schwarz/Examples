@@ -20,6 +20,7 @@ namespace RsZnx_Segmented_Sweep_2Channels
         static void Main(string[] args)
         {
             var io = new RsZnx("TCPIP::10.205.0.51::INSTR", true, true);
+            Console.WriteLine($"Hello, I am {io.System.IDQueryResponse}");
 
             // Be sure to have the display updated whilst remote control
             io.GeneralSettings.DisplayUpdateEnabled = DisplayUpdate.On;

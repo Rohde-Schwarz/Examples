@@ -1,4 +1,5 @@
 """
+# github examples repository path: VectorNetworkAnalyzers/Python/RsInstrument
 
 Created 2021/11
 
@@ -8,7 +9,7 @@ Date of last change:        2021/11/18
 Requires:                   R&S ZNB, FW 3.12 or newer and adequate options
                             Installed VISA e.g. R&S Visa 5.12.x or newer
 
-Description:    Example for ZNx segmented sweep performed on two channels (two segements each), read out marker and trace results
+Description:    Example for ZNx segmented sweep performed on two channels (two segments each), read out marker and trace results
 
 
 General Information:
@@ -25,6 +26,9 @@ from time import sleep
 
 # Define variables
 resource = 'TCPIP0::10.205.0.51::INSTR'                                                                 # VISA resource string for the device
+
+# Make sure you have the last version of the RsInstrument
+RsInstrument.assert_minimum_version('1.19.0.75')
 
 # Define the device handle
 # Instrument = RsInstrument(resource)

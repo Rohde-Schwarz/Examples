@@ -1,4 +1,5 @@
-'''
+"""
+# github examples repository path: VectorNetworkAnalyzers/Python/RsInstrument
 
 Created 2021/05
 
@@ -17,7 +18,7 @@ Please always check this example script for unsuitable setting that may
 destroy your DUT befor connecting it to the instrument!
 This example does not claim to be complete. All information has been
 compiled with care. However errors can not be ruled out. 
-'''
+"""
 
 # --> Import necessary packets  
 from RsInstrument import *
@@ -26,9 +27,12 @@ from time import sleep
 # Define variables
 resource='TCPIP0::10.205.0.172::INSTR'                                                  # VISA resource string for the device
 
+# Make sure you have the last version of the RsInstrument
+RsInstrument.assert_minimum_version('1.19.0.75')
 
 # Define the device handle
 # Instrument = RsInstrument(resource)
+
 Instrument = RsInstrument(resource, True, True, "SelectVisa='rs'")
 '''
 (resource, True, True, "SelectVisa='rs'") has the following meaning:
