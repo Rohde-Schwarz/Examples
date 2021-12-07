@@ -50,7 +50,7 @@ rtb.query_opc()  # Using *OPC? query waits until all the instrument settings are
 # -----------------------------------------------------------
 # Arming the SCOPE for single acquisition
 # -----------------------------------------------------------
-rtb.VisaTimeout = 2000  # Acquisition timeout - set it higher than the acquisition time
+rtb.visa_timeout = 2000  # Acquisition timeout - set it higher than the acquisition time
 rtb.write_str("SING")
 # -----------------------------------------------------------
 # DUT_Generate_Signal() - in our case we use Probe compensation signal
