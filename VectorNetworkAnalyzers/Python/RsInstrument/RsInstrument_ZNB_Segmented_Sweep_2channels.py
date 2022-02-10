@@ -28,7 +28,7 @@ from time import sleep
 resource = 'TCPIP0::10.205.0.51::INSTR'                                                                 # VISA resource string for the device
 
 # Make sure you have the last version of the RsInstrument
-RsInstrument.assert_minimum_version('1.19.0.75')
+RsInstrument.assert_minimum_version('1.21.0.78')
 
 # Define the device handle
 # Instrument = RsInstrument(resource)
