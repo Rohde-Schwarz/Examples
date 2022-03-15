@@ -2,7 +2,7 @@
 
 # Example for NRP-Z powersensors
 # Preconditions:
-# - Installed RsInstrument Python module Version 1.19.0.75 or newer from pypi.org
+# - Installed RsInstrument Python module Version 1.21.0.78 or newer from pypi.org
 # - Installed R&S Visa 5.12.x or newer
 
 from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, see Readme.txt for more details
@@ -10,7 +10,7 @@ import time
 
 nrpz = None
 # Make sure you have the last version of the RsInstrument
-RsInstrument.assert_minimum_version('1.19.0.75')
+RsInstrument.assert_minimum_version('1.21.0.78')
 try:
 	# -----------------------------------------------------------
 	# Initialization:
