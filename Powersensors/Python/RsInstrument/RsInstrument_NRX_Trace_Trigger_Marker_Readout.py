@@ -16,7 +16,7 @@ General Information:
 Please always check this example script for unsuitable setting that may
 destroy your DUT or instrument before connecting!
 This example does not claim to be complete. All information has been
-compiled with care. However errors can not be ruled out.
+compiled with care. However, errors can not be ruled out.
 """
 
 from RsInstrument import *
@@ -63,7 +63,7 @@ nrp.write_str_with_opc('CALCulate1:DMODe MARKer')  # Switch display mode to mark
 sleep(.01)
 x = 0
 while x < 1000:
-    level = nrp.query_str('CALC1:TRAC:MARK1:YPOS?')  # Request marker amount in dBm
+    level = nrp.query_str('CALCulate1:TRACe:MARKer1:YPOSition?')  # Request marker amount in dBm
     print('current measured level is ', level, ' dBm')
     x += 1
     if x == 5:
