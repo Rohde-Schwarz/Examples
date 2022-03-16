@@ -12,7 +12,7 @@
 from RsFsw import *
 
 # A good practice is to check for the installed version
-RsFsw.assert_minimum_version('4.90.0')
+RsFsw.assert_minimum_version('5.0.0')
 
 # Open the session
 fsw = RsFsw('TCPIP::192.168.1.102::HISLIP', reset=True)

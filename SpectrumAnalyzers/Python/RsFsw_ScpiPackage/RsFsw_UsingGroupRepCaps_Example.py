@@ -4,11 +4,11 @@
 # These values are then taken as a default for all the methods belonging to that group.
 # That means, as long as you do not want to use another repcap value, you can use the method overloads without the repcaps.
 # Example (see more in the actual code):
-# var tr3 = fsw.Display.Window.Subwindow.Trace.Clone()
-# tr3.RepCapTrace = TraceRepCap.Tr3
+# var tr3 = fsw.display.window.subwindow.trace.clone()
+# tr3.repcap_trace_set(repcap.Trace.Tr2)
 # Now the following two calls send the same SCPI command: DISPlay1:WINDow:SUBWindow1:TRACe3:MODE MAXHold
-# fsw.Display.Window.Subwindow.Trace.Mode.set(TraceModeCenum.MAXHold, WindowRepCap.Nr1, SubWindowRepCap.Nr1, TraceRepCap.Tr3)
-# tr3.Mode.set(TraceModeCenum.MAXHold)
+# fsw.display.window.subwindow.trace.mode.set(enums.TraceModeCenum.MAXHold, repcap.WindowRepCap.Nr1, repcap.SubWindowRepCap.Nr1, repcap.TraceRepCap.Tr3)
+# tr3.mode.set(enums.TraceModeCenum.MAXHold)
 
 # Preconditions:
 # - Install the RsFsw driver package over Packet Manager from NuGet.org
@@ -17,7 +17,7 @@
 from RsFsw import *
 
 # A good practice is to check for the installed version
-RsFsw.assert_minimum_version('4.90.0')
+RsFsw.assert_minimum_version('5.0.0')
 
 # Open the session
 fsw = RsFsw('TCPIP::192.168.1.102::HISLIP', reset=True)

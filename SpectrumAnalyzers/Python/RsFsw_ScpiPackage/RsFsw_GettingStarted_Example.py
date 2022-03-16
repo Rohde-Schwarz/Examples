@@ -6,7 +6,7 @@ Notice that the python RsFsw interfaces track the SCPI commands syntax."""
 from RsFsw import *
 
 # A good practice is to check for the installed version
-RsFsw.assert_minimum_version('4.90.0')
+RsFsw.assert_minimum_version('5.0.0')
 
 # Open the session
 fsw = RsFsw('TCPIP::192.168.1.102::HISLIP', reset=True)
@@ -68,8 +68,8 @@ m1y = fsw.calculate.marker.y.get(repcap.Window.Nr1, repcap.Marker.Nr1)
 print(f'Trace 1 points: {len(trace1)}')
 print(f'Trace 1 Marker 1: {m1x} Hz, {m1y} dBm')
 
-#   CALCulate1: MARKer2:TRACe 2
-fsw.calculate.marker.Trace.Set(2, repcap.Window.Nr1, repcap.Marker.Nr2)
+#   CALCulate1:MARKer2:TRACe 2
+fsw.calculate.marker.trace.set(2, repcap.Window.Nr1, repcap.Marker.Nr2)
 
 #   CALCulate1:MARKer2:MINimum:PEAK
 fsw.calculate.marker.minimum.peak.set(repcap.Window.Nr1, repcap.Marker.Nr2)
