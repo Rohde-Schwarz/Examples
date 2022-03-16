@@ -51,7 +51,7 @@ rto.query_opc()  # Using *OPC? query waits until all the instrument settings are
 # -----------------------------------------------------------
 # Arming the rto for single acquisition
 # -----------------------------------------------------------
-rto.VisaTimeout = 2000  # Acquisition timeout - set it higher than the acquisition time
+rto.visa_timeout = 2000  # Acquisition timeout - set it higher than the acquisition time
 rto.write_str("SING")
 # -----------------------------------------------------------
 # DUT_Generate_Signal() - in our case we use Probe compensation signal
