@@ -17,7 +17,7 @@ namespace RsSmcv_Example
     {
         static void Main()
         {
-            var smcv = new RsSmcv("TCPIP::10.102.52.57::INSTR", true, true);
+            var smcv = new RsSmcv("TCPIP::10.102.52.52::HISLIP", true, true);
             //var smcv = new RsSmcv("TCPIP::10.112.1.73::INSTR", true, true, "SelectVisa=RsVisa"); // Forcing R&S VISA
             //var smcv = new RsSmcv("TCPIP::10.112.1.73::5025::SOCKET", true, true, "SelectVisa=SocketIo"); // No VISA needed
             Console.WriteLine("Driver Info: " + smcv.Utilities.Identification.DriverVersion);
@@ -27,6 +27,11 @@ namespace RsSmcv_Example
 
             // Driver's instrument status checking ( SYST:ERR? ) after each command (default value is true):
             smcv.Utilities.InstrumentStatusChecking = true;
+
+            // Setting the VISA Timeout to 5000 ms.
+            smcv.Utilities.VisaTimeout = 5000;
+            
+            // Resetting the instrument.
             smcv.Utilities.Reset();
 
             // Set the output -20 dBm, 223 MHz

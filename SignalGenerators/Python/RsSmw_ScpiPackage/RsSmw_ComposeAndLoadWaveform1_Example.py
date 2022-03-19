@@ -8,8 +8,8 @@
 import numpy as np
 from RsSmw import *
 
-RsSmw.assert_minimum_version('4.80.2')
-smw = RsSmw('TCPIP::10.112.1.179::HISLIP')
+RsSmw.assert_minimum_version('5.0.44')
+smw = RsSmw('TCPIP::10.102.52.47::HISLIP')
 print(smw.utilities.idn_string)
 smw.utilities.reset()
 
@@ -23,7 +23,7 @@ instr_wv_file = '/var/user/InstrDemoFile.wv'
 clock_freq = 600e6
 # wave clock
 wave_freq = 120e6
-# Scale factor - change it to less or more that 1 if you want to see the autoscaling capability of the create_waveform_file...() methods
+# Scale factor - change it to less or more than 1 if you want to see the autoscaling capability of the create_waveform_file...() methods
 scale_factor = 0.43
 time_vector = np.arange(0, 50 / wave_freq, 1 / clock_freq)
 # I-component an Q-component data

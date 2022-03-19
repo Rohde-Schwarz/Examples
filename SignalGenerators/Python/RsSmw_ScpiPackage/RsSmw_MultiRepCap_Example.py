@@ -3,8 +3,8 @@
 
 from RsSmw import *
 
-RsSmw.assert_minimum_version('4.80.2')
-smw = RsSmw('TCPIP::10.112.1.67::HISLIP', True, True)
+RsSmw.assert_minimum_version('5.0.44')
+smw = RsSmw('TCPIP::10.102.52.47::HISLIP', True, True)
 print(f'Driver Info: {smw.utilities.driver_version}')
 print(f'Instrument: {smw.utilities.idn_string}')
 
