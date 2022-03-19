@@ -31,7 +31,7 @@ namespace RsSmw_FileTransferWithProgress_Example
             rng.NextBytes(data);
             File.WriteAllBytes(pcFile, data);
 
-            var smw = new RsSmw("TCPIP::10.112.1.179::INSTR", true, true);
+            var smw = new RsSmw("TCPIP::10.102.52.47::HISLIP", true, true);
             // Set the one segment after which the handler is called to 1000000 bytes
             smw.Utilities.IoSegmentSize = 1000000;
             Console.WriteLine("Transfer to the instrument started");

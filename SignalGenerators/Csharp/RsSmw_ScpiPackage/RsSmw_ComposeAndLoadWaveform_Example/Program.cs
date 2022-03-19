@@ -20,7 +20,7 @@ namespace RsSmw_ComposeAndLoadWaveform_Example
     {
         static void Main(string[] args)
         {
-            var smw = new RsSmw("TCPIP::10.112.1.179::INSTR", true, true);
+            var smw = new RsSmw("TCPIP::10.102.52.47::HISLIP", true, true);
             Console.WriteLine("Driver Info: " + smw.Utilities.Identification.DriverVersion);
             Console.WriteLine("Instrument: " + smw.Utilities.Identification.IdnString);
             Console.WriteLine("Instrument options: " + string.Join(",", smw.Utilities.Identification.InstrumentOptions));

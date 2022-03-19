@@ -18,13 +18,16 @@ namespace RsSmw_Example
     {
         static void Main()
         {
-            var smw = new RsSmw("TCPIP::10.112.1.67::INSTR", true, true);
+            var smw = new RsSmw("TCPIP::10.102.52.47::HISLIP", true, true);
             //var smw = new RsSmw("TCPIP::10.112.1.179::INSTR", true, true, "SelectVisa=RsVisa"); // Forcing R&S VISA
             //var smw = new RsSmw("TCPIP::10.112.1.179::5025::SOCKET", true, true, "SelectVisa=SocketIo"); // No VISA needed
             Console.WriteLine("Driver Info: " + smw.Utilities.Identification.DriverVersion);
             Console.WriteLine($"Selected Visa: {smw.Utilities.Identification.VisaManufacturer}, DLL: {smw.Utilities.Identification.VisaDllName}");
             Console.WriteLine("Instrument: " + smw.Utilities.Identification.IdnString);
             Console.WriteLine("Instrument options: " + string.Join(",", smw.Utilities.Identification.InstrumentOptions));
+
+            // Setting the VISA Timeout to 5000 ms.
+            smw.Utilities.VisaTimeout = 5000;
 
             // Driver's instrument status checking ( SYST:ERR? ) after each command (default value is true):
             smw.Utilities.InstrumentStatusChecking = true;
@@ -36,8 +39,8 @@ namespace RsSmw_Example
             var smwB = smw.Clone();
             smwB.RepCapHwInstance = HwInstanceRepCap.InstB;
 
-            // Now we have two independent objects for two RF Outputs - smw and smwB
-            // They share some common features of the instrument, like for example resetting
+            // Now we have two independent objects for two RF Outputs - driver and driverRf2
+			// They share some common features of the instrument, like for example Resetting
             smw.Utilities.Reset();
 
             // Set the Output A to CW -20 dBm, 223 MHz

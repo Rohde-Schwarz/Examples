@@ -15,7 +15,7 @@ namespace RsSmw_Example
     {
         static void Main()
         {
-            var smw = new RsSmw("TCPIP::10.112.1.67::INSTR", true, true);
+            var smw = new RsSmw("TCPIP::10.102.52.47::HISLIP", true, true);
             Console.WriteLine("Driver Info: " + smw.Utilities.Identification.DriverVersion);
             Console.WriteLine("Instrument: " + smw.Utilities.Identification.IdnString);
 
