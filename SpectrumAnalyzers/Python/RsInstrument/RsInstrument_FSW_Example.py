@@ -1,14 +1,14 @@
 # github examples repository path: SpectrumAnalyzers/Python/RsInstrument
 # Example for FSW / FSV / FSVA / FPS Spectrum Analyzers
 # Preconditions:
-# - Installed RsInstrument Python module Version 1.22.0.79 or newer from pypi.org
+# - Installed RsInstrument Python module
 # - Installed VISA e.g. R&S Visa 5.12.x or newer
 
 from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, see Readme.txt for more details
 from time import time
 
 specan = None
-RsInstrument.assert_minimum_version('1.22.0.79')
+RsInstrument.assert_minimum_version('1.22.0')
 try:
 	# Adjust the VISA Resource string to fit your instrument
 	specan = RsInstrument('TCPIP::localhost::INSTR', True, False)

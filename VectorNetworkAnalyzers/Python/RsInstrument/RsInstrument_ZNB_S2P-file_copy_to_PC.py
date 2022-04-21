@@ -34,7 +34,7 @@ pc_filename = r'C:\Tempdata\pcs2pfile.s2p'                                      
 
 
 # Make sure you have the last version of the RsInstrument
-RsInstrument.assert_minimum_version('1.22.0.79')
+RsInstrument.assert_minimum_version('1.22.0')
 
 # Define the device handle
 # Instrument = RsInstrument(resource)
