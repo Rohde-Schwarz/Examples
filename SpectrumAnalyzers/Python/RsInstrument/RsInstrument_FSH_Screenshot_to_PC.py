@@ -4,9 +4,9 @@
 Created on 2022/04
 
 Author: Jahns_P
-Version Number: 2
-Date of last change: 2022/04/21
-Requires: FPC1x00 series SPA, FW 1.70 or newer and adequate options
+Version Number: 1
+Date of last change: 2022/04/19
+Requires: FSH series SPA, FW 3.30 or newer and adequate options
 - Installed RsInstrument Python module 1.70 or newer
 - Installed VISA e.g. R&S Visa 5.12.x or newer
 
@@ -28,10 +28,12 @@ from RsInstrument import *
 from time import sleep
 
 # Define variables
-resource = 'TCPIP::10.205.0.184::INSTR'  # VISA resource string for the device
+resource = 'TCPIP::10.205.0.41::INSTR'  # VISA resource string for the device
 # resource = 'TCPIP::172.16.10.10::INSTR'  # Original resource string when using USB connection
 recdur = 10  # Time in seconds to find max hold peaks
-filename = r'C:\test\TraceFile.CSV'
+inst_filename = '"\Public\Screen Shots\screenshot.png"'
+pc_filename = r'C:\test\FSH_ScreenShot.PNG'
+
 
 # Define the device handle
 instrument = RsInstrument(resource, reset=True, id_query=True, options="SelectVisa='rs'")
@@ -83,39 +85,26 @@ def meas_prep():
     instrument.write_str_with_opc('DISPlay:TRACe1:MODE MAXHold')  # Trace to Max Hold
 
 
-def trace_get():
+def measure():
     """Initialize continuous measurement, stop it after the desired time, query trace data"""
 
     instrument.write_str_with_opc('INITiate:CONTinuous ON')  # Continuous measurement on trace 1 ON
     print('Please wait for maxima to be found...')
     sleep(int(recdur))  # Wait for preset record time
-    instrument.write('DISPlay:TRACe1:MODE VIEW')  # Continuous measurement on trace 1 OFF
+    instrument.write('DISPlay:TRACe1:MODE VIEW')  # Set trace to view mode / stop collecting data
     instrument.query_opc()
-    sleep(0.5)
 
-    # Get y data (amplitude for each point)
-    trace_data = instrument.query('Trace:DATA? TRACe1')  # Read y data of trace 1
-    csv_trace_data = trace_data.split(",")  # Slice the amplitude list
-    trace_len = len(csv_trace_data)  # Get number of elements of this list
 
-    # Reconstruct x data (frequency for each point) as it can not be directly read from the instrument
-    start_freq = instrument.query_float('FREQuency:STARt?')
-    span = instrument.query_float('FREQuency:SPAN?')
-    step_size = span / (trace_len-1)
+def screen_copy():
+    """Prepare and perform screenshot, transfer data to local PC"""
+    instrument.write('HCOPy:DEVice:LANGuage PNG')  # Select file format for screenshot (possible: PNG or JPG)
+    instrument.write(f'MMEMory:NAME {inst_filename}')  # Define path and name for the screenshot on the instrument
+    instrument.write('HCOPy:IMMediate')  # Perform screenshot and save it on the analyzer
+    # Transfer file to PC
+    instrument.data_chunk_size = 10000
+    instrument.query_bin_block_to_file(f'MMEMory:DATA? {inst_filename}', f'{pc_filename}', append=False)
+    instrument.write(f'MMEMory:DELete {inst_filename}')  # And delete it on the instrument
 
-    # Now write values into file
-    file = open(filename, 'w')  # Open file for writing
-    file.write("Frequency in Hz;Power in dBm\n")  # Write the headline
-    x = 0  # Set counter to 0 as list starts with 0
-    while x < int(trace_len):  # Perform loop until all sweep points are covered
-        file.write(f'{(start_freq + x * step_size):.1f}')  # Write adequate frequency information
-        file.write(";")
-        amp = float(csv_trace_data[x])
-        file.write(f'{amp:.2f}')  # Write adequate amplitude information
-        file.write("\n")
-        x = x+1
-    file.close()  # CLose the file
-    
 #
 # -------------------------
 # Main Program begins here
@@ -126,9 +115,10 @@ def trace_get():
 com_prep()
 com_check()
 meas_prep()
-trace_get()
+measure()
+screen_copy()
 close()
 
 
 print('Program successfully ended.')
-print('Wrote trace data into', filename)
+print('Wrote trace data into', pc_filename)

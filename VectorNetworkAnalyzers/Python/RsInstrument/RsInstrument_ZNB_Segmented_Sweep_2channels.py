@@ -1,5 +1,5 @@
 """
-# github examples repository path: VectorNetworkAnalyzers/Python/RsInstrument
+# GitHub examples repository path: VectorNetworkAnalyzers/Python/RsInstrument
 
 Created 2021/11
 
@@ -17,10 +17,9 @@ General Information:
 Please always check this example script for unsuitable setting that may
 destroy your DUT befor connecting it to the instrument!
 This example does not claim to be complete. All information has been
-compiled with care. However errors can not be ruled out.
+compiled with care. However, errors can not be ruled out.
 """
 
-# --> Import necessary packets  
 from RsInstrument import *
 from time import sleep
 

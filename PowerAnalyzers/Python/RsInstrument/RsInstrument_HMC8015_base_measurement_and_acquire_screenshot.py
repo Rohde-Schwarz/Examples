@@ -1,4 +1,5 @@
 """
+# GitHub examples repository path: PowerAnalyzers/Python/RsInstrument
 
 Created on 2020/03
 
@@ -134,7 +135,7 @@ print('=============================')
 
 hmc.write_str_with_opc('HCOPy:FORMat BMP')  # Hard copy file format to BMP
 hmc.query_bin_block_to_file('HCOPy:DATA?', r"e:\Python\Dev_Screenshot.bmp", False)  # Transfer file to PC
-print('\nScreenshot saved to e:\Python\Dev_Screenshot.bmp')
+print(r'\nScreenshot saved to e:\Python\Dev_Screenshot.bmp')
 
 
 # =================

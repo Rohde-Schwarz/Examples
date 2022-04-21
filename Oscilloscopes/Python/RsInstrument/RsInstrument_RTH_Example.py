@@ -1,12 +1,12 @@
 """
-# github examples repository path: Oscilloscopes/Python/RsInstrument
+# GitHub examples repository path: Oscilloscopes/Python/RsInstrument
 
 This Python example shows how to transfer waveform data (ASCII and binary format)
 + screenshot from RTH oscilloscope to the controller PC. The RTH probe compensation
 signal can be used for a simple test.
 
 Preconditions:
-- Installed RsInstrument Python module Version 1.22.0 or newer from pypi.org
+# - Installed RsInstrument Python module from pypi.org
 - Installed VISA e.g. R&S Visa 5.12.x or newer
 
 Tested with:

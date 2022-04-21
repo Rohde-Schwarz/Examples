@@ -1,5 +1,5 @@
 """
-# github examples repository path: Powersupplies/Python/RsInstrument
+# GitHub examples repository path: Powersupplies/Python/RsInstrument
 
 Created 2021/03
 
@@ -18,13 +18,12 @@ General Information:
 Please always check this example script for unsuitable setting that may
 destroy your DUT before connecting it to the instrument!
 This example does not claim to be complete. All information has been
-compiled with care. However errors can not be ruled out.
+compiled with care. However, errors can not be ruled out.
 
 Please find more information about RsInstrument at
 https://rsinstrument.readthedocs.io/en/latest/
 """
 
-# --> Import necessary packets
 from RsInstrument import *
 # from RsInstrument.RsInstrument import RsInstrument
 # from RsInstrument.RsInstrument import BinFloatFormat, BinIntFormat

@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 """
+
 Created on 2021/11
 
 Author: Jahns_P
@@ -14,7 +14,7 @@ Description: Initiate Instrument and perform measurement on CH B
 
 General Information:
 This example does not claim to be complete. All information has been
-compiled with care. However errors can not be ruled out.
+compiled with care. However, errors can not be ruled out.
 """
 
 from RsInstrument import *

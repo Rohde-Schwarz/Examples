@@ -1,8 +1,8 @@
-# github examples repository path: Powersensors/Python/RsInstrument
+# GitHub examples repository path: Powersensors/Python/RsInstrument
 
 # Example for NRP-Z powersensors
 # Preconditions:
-# - Installed RsInstrument Python module
+# - Installed RsInstrument Python module from pypi.org
 # - Installed R&S Visa 5.12.x or newer
 
 from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, see Readme.txt for more details

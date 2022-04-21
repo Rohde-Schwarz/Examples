@@ -1,4 +1,5 @@
 """
+# GitHub examples repository path: VectorNetworkAnalyzers/Python/RsInstrument
 
 Created 2022/02
 
@@ -19,7 +20,6 @@ This example does not claim to be complete. All information has been
 compiled with care. However, errors can not be ruled out.
 """
 
-# --> Import necessary packets  
 from RsInstrument import *
 from time import sleep
 

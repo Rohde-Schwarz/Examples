@@ -1,4 +1,5 @@
 """
+# GitHub examples repository path: PowerAnalyzers/Python/RsInstrument
 
 Created on 2022/03
 
@@ -17,7 +18,7 @@ General Information:
 Please always check this example script for unsuitable setting that may
 destroy your DUT before connecting it to the instrument!
 This example does not claim to be complete. All information has been
-compiled with care. However errors can not be ruled out.
+compiled with care. However, errors can not be ruled out.
 """
 
 from RsInstrument.RsInstrument import *

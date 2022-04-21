@@ -1,5 +1,5 @@
 """
-# github examples repository path: VectorNetworkAnalyzers/Python/RsInstrument
+# GitHub examples repository path: VectorNetworkAnalyzers/Python/RsInstrument
 
 Created 2021/05
 
@@ -22,7 +22,6 @@ However, errors can not be ruled out.
 Please find more information about RsInstrument at
 https://rsinstrument.readthedocs.io/en/latest/
 """
-
 
 from RsInstrument import *
 from time import sleep

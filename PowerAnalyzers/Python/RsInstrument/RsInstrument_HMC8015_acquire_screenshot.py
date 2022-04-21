@@ -1,4 +1,5 @@
 """
+# GitHub examples repository path: PowerAnalyzers/Python/RsInstrument
 
 Created on 2021/06
 
@@ -21,7 +22,6 @@ compiled with care. However, errors can not be ruled out.
 """
 
 from RsInstrument.RsInstrument import *
-from time import sleep
 
 # ================================
 # Prepare instrument communication
@@ -52,7 +52,7 @@ print(f'Instrument installed options: {",".join(HMC8015.instrument_options)}')
 HMC8015.write_str_with_opc('HCOPy:FORMat BMP')  # Hard copy file format to BMP
 HMC8015.query_bin_block_to_file('HCOPy:DATA?', r"e:\Python\Dev_Screenshot.png", False)  # Transfer file to PC
 print()
-print('Successfully saved the screenshot to E:\Python\Dev_Screenshot.png')
+print(r'Successfully saved the screenshot to E:\Python\Dev_Screenshot.png')
 
 
 # =================

@@ -1,4 +1,6 @@
 """
+# GitHub examples repository path: PowerAnalyzers/Python/RsInstrument
+
 Created on 2020/10
 Author: Jahns_P
 Version Number: 4
@@ -17,11 +19,10 @@ Please find more information about RsInstrument at
 https://rsinstrument.readthedocs.io/en/latest/
 """
 
-# --> Import necessary packets
 from RsInstrument import *
 from time import sleep
 
-RsInstrument.assert_minimum_version('1.20.0')
+RsInstrument.assert_minimum_version('1.22.0')
 
 # Define variables
 resource = 'TCPIP::10.205.0.53::5025::SOCKET'  # VISA resource string for the device
@@ -36,7 +37,7 @@ LogFileName = 'LOG1234.CSV'  # Name of the log file
 pcFilePath = r'c:\temp\logdata.csv'
 
 # Make sure you have the last version of the RsInstrument
-RsInstrument.assert_minimum_version('1.21.0.78')
+RsInstrument.assert_minimum_version('1.22.0')
 
 # Define the device handle
 hmc = RsInstrument(resource, True, True, "SelectVisa='rs'")

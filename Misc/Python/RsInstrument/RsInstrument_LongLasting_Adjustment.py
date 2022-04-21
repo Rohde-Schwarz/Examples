@@ -1,7 +1,7 @@
-# Example on how to use the RsInstrument module for remote-controling of your instrument
+# Example on how to use the RsInstrument module for remote-controlling of your instrument
 # Here we show on how to perform a long-lasting operation, like for example an instrument calibration
 # Preconditions:
-# - Installed RsInstrument Python module
+# - Installed RsInstrument Python module from pypi.org
 # - Installed VISA e.g. R&S Visa 5.12.x or newer
 
 from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, see Readme.txt for more details

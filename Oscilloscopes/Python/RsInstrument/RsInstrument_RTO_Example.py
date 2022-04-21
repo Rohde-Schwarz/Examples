@@ -1,7 +1,7 @@
-# github examples repository path: Oscilloscopes/Python/RsInstrument
+# GitHub examples repository path: Oscilloscopes/Python/RsInstrument
 # Example for RTO / RTE / RTP Oscilloscopes
 # Preconditions:
-# - Installed RsInstrument Python module
+# - Installed RsInstrument Python module from pypi.org
 # - Installed VISA e.g. R&S Visa 5.12.x or newer
 
 from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, see Readme.txt for more details

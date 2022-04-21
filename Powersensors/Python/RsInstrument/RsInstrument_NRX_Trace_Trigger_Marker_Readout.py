@@ -1,4 +1,5 @@
 """
+# GitHub examples repository path: Powersensors/Python/RsInstrument
 
 Created on 2022/02
 
@@ -22,7 +23,7 @@ compiled with care. However, errors can not be ruled out.
 from RsInstrument import *
 from time import sleep
 
-RsInstrument.assert_minimum_version('1.21.0.78')
+RsInstrument.assert_minimum_version('1.22.0')
 
 #
 # Signal for the following settings is pulse modulated, 1m s PRI, 10 µs duty

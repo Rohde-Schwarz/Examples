@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 """
+# GitHub examples repository path: Powersupplies/Python/RsInstrument
 
 Created on 2022/03
 
@@ -22,7 +22,7 @@ from RsInstrument import *
 from time import sleep
 
 # Initialize and request instrument for all sessions via VISA
-RsInstrument.assert_minimum_version('1.19.0.75')
+RsInstrument.assert_minimum_version('1.22.0')
 ngp = RsInstrument('TCPIP::10.205.0.149::hislip0', True, True,  # Init with IDN query and reset
                    "SelectVisa='rs',")  # Control the device via RsVISA
 

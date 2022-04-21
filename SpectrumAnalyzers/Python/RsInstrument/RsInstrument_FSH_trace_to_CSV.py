@@ -4,9 +4,9 @@
 Created on 2022/04
 
 Author: Jahns_P
-Version Number: 2
-Date of last change: 2022/04/21
-Requires: FPC1x00 series SPA, FW 1.70 or newer and adequate options
+Version Number: 1
+Date of last change: 2022/04/19
+Requires: FSH series SPA, FW 3.30 or newer and adequate options
 - Installed RsInstrument Python module 1.70 or newer
 - Installed VISA e.g. R&S Visa 5.12.x or newer
 
@@ -28,7 +28,7 @@ from RsInstrument import *
 from time import sleep
 
 # Define variables
-resource = 'TCPIP::10.205.0.184::INSTR'  # VISA resource string for the device
+resource = 'TCPIP::10.205.0.41::INSTR'  # VISA resource string for the device
 # resource = 'TCPIP::172.16.10.10::INSTR'  # Original resource string when using USB connection
 recdur = 10  # Time in seconds to find max hold peaks
 filename = r'C:\test\TraceFile.CSV'
@@ -89,7 +89,7 @@ def trace_get():
     instrument.write_str_with_opc('INITiate:CONTinuous ON')  # Continuous measurement on trace 1 ON
     print('Please wait for maxima to be found...')
     sleep(int(recdur))  # Wait for preset record time
-    instrument.write('DISPlay:TRACe1:MODE VIEW')  # Continuous measurement on trace 1 OFF
+    instrument.write('DISPlay:TRACe1:MODE VIEW')  # Set trace to view mode / stop collecting data
     instrument.query_opc()
     sleep(0.5)
 
