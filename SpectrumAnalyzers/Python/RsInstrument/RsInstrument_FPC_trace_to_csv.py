@@ -7,7 +7,7 @@ Author: Jahns_P
 Version Number: 2
 Date of last change: 2022/04/21
 Requires: FPC1x00 series SPA, FW 1.70 or newer and adequate options
-- Installed RsInstrument Python module 1.70 or newer
+- Installed RsInstrument Python module from pypi.org
 - Installed VISA e.g. R&S Visa 5.12.x or newer
 
 Description: Setup measurement, get trace data, slice it, calculate frequency list, and save data to a local CSV file
