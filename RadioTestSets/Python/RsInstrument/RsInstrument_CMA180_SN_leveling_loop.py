@@ -1,4 +1,6 @@
 """
+# GitHub examples repository path: RadioTestSets/Python/RsInstrument
+
 Created 2022/04
 
 Author:                     Jahns_P
