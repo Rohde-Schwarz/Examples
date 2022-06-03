@@ -26,7 +26,7 @@ namespace Csharp_VISA.NET_Scope_SRQevent_Example
         {
 
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.16.0");
+            RsInstrument.AssertMinVersion("1.17.0");
 
             try // Separate try-catch for scope initialization prevents accessing uninitialized object
             {
