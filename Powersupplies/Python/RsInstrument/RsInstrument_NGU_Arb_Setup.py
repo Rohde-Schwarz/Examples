@@ -1,6 +1,5 @@
+# -*- coding: utf-8 -*-
 """
-# GitHub examples repository path: Powersupplies/Python/RsInstrument
-
 Created on 2022/03
 
 Author: Jahns_P
@@ -22,7 +21,7 @@ from RsInstrument import *
 from time import sleep
 
 # Initialize and request instrument for all sessions via VISA
-RsInstrument.assert_minimum_version('1.22.0')
+RsInstrument.assert_minimum_version('1.25.0')
 ngu = RsInstrument('USB0::0x0AAD::0x0197::3639.3763k03-101267::INSTR', reset=True, id_query=True, options="SelectVisa='rs'")  # Control the device via RsVISA
 
 idn = ngu.query_str('*IDN?')
@@ -35,12 +34,19 @@ def close():
 
 
 def arb_setup():
-    """Perform all the ARB and trigger settings"""
-    ngu.write('ARBitrary:PRIority:MODE CPM')
+    """Perform all the ARB an d trigger settings"""
+    # *** VPM Mode ***
+    # ngu.write('ARBitrary:PRIority:MODE VPM')
     # ngu.write('ARB:DATA 5,0.2,-0.2,2,0,12,0.3,-0.3,2,0,15,0.4,-0.4,2,0')  # Define Arb Data
-    ngu.write('ARB:DATA 5,-1,1,2,0,12,-2,2,2,0,15,-1,1,2,0')  # Define Arb Data
-    # (5 V, -1 A,1 A, 2 seconds, not interpolated
-    # (12 V, -2 A, 2A, 2 seconds, not interpolated...
+    # (5 V, 0.2 A, -0.2 A, 2 seconds, not interpolated
+    # (12 V, 0.3 A, -0.3 A, 2 seconds, not interpolated...
+
+    # *** CPM Mode ***
+    ngu.write('ARBitrary:PRIority:MODE CPM')
+    ngu.write('ARB:DATA 5,-5,1,2,0,12,-12,2,2,0,15,-15,1,2,0')  # Define Arb Data as
+    # (5 V, -5 V, 1 A, 2 seconds, not interpolated
+    # (12 V, -12 V, 2A, 2 seconds, not interpolated...
+
     ngu.write('ARB:REP 2')  # Block is repeated 2 times
     ngu.write('ARBitrary:BEHavior:END OFF')  # Switch off Channel after sequence is done
     ngu.query_opc()  # Check for command completion using *OPC?
