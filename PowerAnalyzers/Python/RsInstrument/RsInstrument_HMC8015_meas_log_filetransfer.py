@@ -14,7 +14,7 @@ General Information:
 Please always check this example script for unsuitable setting that may
 destroy your DUT before connecting it to the instrument!
 This example does not claim to be complete. All information has been
-compiled with care. However errors can not be ruled out.
+compiled with care. However, errors can not be ruled out.
 Please find more information about RsInstrument at
 https://rsinstrument.readthedocs.io/en/latest/
 """
@@ -22,7 +22,7 @@ https://rsinstrument.readthedocs.io/en/latest/
 from RsInstrument import *
 from time import sleep
 
-RsInstrument.assert_minimum_version('1.22.0')
+RsInstrument.assert_minimum_version('1.53.0')
 
 # Define variables
 resource = 'TCPIP::10.205.0.53::5025::SOCKET'  # VISA resource string for the device
@@ -37,7 +37,7 @@ LogFileName = 'LOG1234.CSV'  # Name of the log file
 pcFilePath = r'c:\temp\logdata.csv'
 
 # Make sure you have the last version of the RsInstrument
-RsInstrument.assert_minimum_version('1.22.0')
+RsInstrument.assert_minimum_version('1.53.0')
 
 # Define the device handle
 hmc = RsInstrument(resource, True, True, "SelectVisa='rs'")

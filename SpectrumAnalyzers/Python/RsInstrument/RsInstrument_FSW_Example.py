@@ -8,7 +8,7 @@ from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, se
 from time import time
 
 fsw = None
-RsInstrument.assert_minimum_version('1.22.0')
+RsInstrument.assert_minimum_version('1.53.0')
 try:
 	# Adjust the VISA Resource string to fit your instrument
 	fsw = RsInstrument('TCPIP::localhost::INSTR', True, False)
@@ -25,8 +25,8 @@ print(f'SpecAn Options: {",".join(fsw.instrument_options)}')
 
 fsw.clear_status()
 fsw.reset()
-fsw.write_str('INIT:CONT OFF')  # Switch OFF the continuous sweep
-fsw.write_str('SYST:DISP:UPD ON')  # Display update ON - switch OFF after debugging
+fsw.write_str('INIT:CONT ON')  # Switch OFF the continuous sweep
+fsw.write_str('SYST:DISPlay:')  # Display update ON - switch OFF after debugging
 # -----------------------------------------------------------
 # Basic Settings:
 # -----------------------------------------------------------

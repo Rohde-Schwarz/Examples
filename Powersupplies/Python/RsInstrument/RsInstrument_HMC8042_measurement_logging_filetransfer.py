@@ -40,7 +40,7 @@ pcFilePath = r'c:\temp\logdata.csv'
 
 
 # Define communication
-RsInstrument.assert_minimum_version('1.50')  # Check for RsInstrument version and stop if version number is too low
+RsInstrument.assert_minimum_version('1.53.0')  # Check for RsInstrument version and stop if version number is too low
 hmcpsu = RsInstrument(resource, reset=True, id_query=False,
                       options="SelectVisa='rs' , LoggingMode = Off, LoggingToConsole = False")
 

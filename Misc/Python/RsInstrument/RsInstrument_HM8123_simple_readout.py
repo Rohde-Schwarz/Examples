@@ -22,7 +22,7 @@ from time import sleep
 
 
 # Make sure you have the last version of the RsInstrument
-RsInstrument.assert_minimum_version('1.22.0')
+RsInstrument.assert_minimum_version('1.53.0')
 instr = RsInstrument('ASRL4::INSTR', options='Profile=hm8123')
 instr.reset()
 sleep(1)

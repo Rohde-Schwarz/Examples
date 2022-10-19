@@ -13,7 +13,7 @@ option_string_force_rs_visa = 'SelectVisa=rs'  # Forcing R&S VISA usage
 option_string_force_no_visa = 'SelectVisa=SocketIo'  # Socket communication for LAN connections, no need for any VISA installation
 
 # Make sure you have the last version of the RsInstrument
-RsInstrument.assert_minimum_version('1.22.0')
+RsInstrument.assert_minimum_version('1.53.0')
 
 instr = RsInstrument(instr_resource_string, True, False, option_string_empty)
 

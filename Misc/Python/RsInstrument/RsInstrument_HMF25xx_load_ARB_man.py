@@ -20,7 +20,7 @@ from RsInstrument import *
 from time import sleep
 
 
-RsInstrument.assert_minimum_version('1.22.0')
+RsInstrument.assert_minimum_version('1.53.0')
 instr = RsInstrument('TCPIP::10.205.0.72::5025::SOCKET', True, True,  # Init with IDN query and reset
                      "SelectVisa='rs',"  # VISA type selection (valid parameters: rs or ni)
                      " Termination Character='\n',"  # Just to show how this is done. \n ist standard termination. 

@@ -11,7 +11,7 @@ import math
 
 nrpz = None
 # Make sure you have the last version of the RsInstrument
-RsInstrument.assert_minimum_version('1.22.0')
+RsInstrument.assert_minimum_version('1.53.0')
 try:
 	# -----------------------------------------------------------
 	# Initialization:

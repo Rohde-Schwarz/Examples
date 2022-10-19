@@ -23,7 +23,7 @@ compiled with care. However, errors can not be ruled out.
 from RsInstrument import *
 from time import sleep
 
-RsInstrument.assert_minimum_version('1.22.0')
+RsInstrument.assert_minimum_version('1.53.0')
 
 #
 # Signal for the following settings is pulse modulated, 1m s PRI, 10 µs duty

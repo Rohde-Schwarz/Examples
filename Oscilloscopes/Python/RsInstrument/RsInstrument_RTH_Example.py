@@ -34,7 +34,7 @@ from time import time
 
 def main():
     # Make sure you have the last version of the RsInstrument
-    RsInstrument.assert_minimum_version('1.22.0')
+    RsInstrument.assert_minimum_version('1.53.0')
     rth = None
     try:
         # adjust the VISA Resource string to fit your instrument

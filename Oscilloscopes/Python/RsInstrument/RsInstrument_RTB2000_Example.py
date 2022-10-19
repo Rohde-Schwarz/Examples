@@ -9,7 +9,7 @@ from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, se
 from time import time
 
 # Make sure you have the last version of the RsInstrument
-RsInstrument.assert_minimum_version('1.22.0')
+RsInstrument.assert_minimum_version('1.53.0')
 rtb = None
 try:
 	# Adjust the VISA Resource string to fit your instrument
