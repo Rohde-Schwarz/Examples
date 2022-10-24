@@ -26,7 +26,7 @@ print(f'SpecAn Options: {",".join(fsw.instrument_options)}')
 fsw.clear_status()
 fsw.reset()
 fsw.write_str('INIT:CONT ON')  # Switch OFF the continuous sweep
-fsw.write_str('SYST:DISPlay:')  # Display update ON - switch OFF after debugging
+fsw.write_str('SYST:DISPlay:UPD ON')  # Display update ON - switch OFF after debugging
 # -----------------------------------------------------------
 # Basic Settings:
 # -----------------------------------------------------------
