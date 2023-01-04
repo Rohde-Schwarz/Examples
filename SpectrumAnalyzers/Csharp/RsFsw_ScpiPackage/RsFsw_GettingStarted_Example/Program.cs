@@ -32,6 +32,9 @@ namespace RsFsw_GettingStarted_Example
             // Driver's instrument status checking ( SYST:ERR? ) after each command (default value is true):
             fsw.Utilities.InstrumentStatusChecking = true;
 
+            //  SENSe:ROSCillator:SOURce INTernal
+            fsw.Sense.Roscillator.Source.Set(ReferenceSourceAenum.INTernal);
+
             //  SYSTem:DISPlay:UPDate ON
             fsw.System.Display.Update.Set(true);
 
