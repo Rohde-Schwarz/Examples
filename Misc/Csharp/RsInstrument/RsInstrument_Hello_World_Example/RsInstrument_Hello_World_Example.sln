@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RsInstrument_Hello_World_Example", "RsInstrument_Hello_World_Example.csproj", "{4823910A-6AE1-4248-A990-76EDDBA5001A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4823910A-6AE1-4248-A990-76EDDBA5001A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4823910A-6AE1-4248-A990-76EDDBA5001A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4823910A-6AE1-4248-A990-76EDDBA5001A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4823910A-6AE1-4248-A990-76EDDBA5001A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27BB05BA-1C0A-4D6A-A710-FCD9948DB8D9}
+	EndGlobalSection
+EndGlobal

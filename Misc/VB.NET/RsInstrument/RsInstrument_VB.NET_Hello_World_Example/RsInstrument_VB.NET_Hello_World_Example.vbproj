@@ -11,8 +11,9 @@
     <AssemblyName>RsInstrument_VB.NET_Hello_World_Example</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -50,8 +51,8 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="RsInstrument, Version=1.4.2.38, Culture=neutral, PublicKeyToken=21acc6a002277cd7, processorArchitecture=MSIL">
-      <HintPath>..\packages\RsInstrument.1.4.2\lib\net45\RsInstrument.dll</HintPath>
+    <Reference Include="RsInstrument, Version=1.18.0.78, Culture=neutral, PublicKeyToken=21acc6a002277cd7, processorArchitecture=MSIL">
+      <HintPath>packages\RsInstrument.1.18.0\lib\net48\RsInstrument.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -79,6 +80,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>

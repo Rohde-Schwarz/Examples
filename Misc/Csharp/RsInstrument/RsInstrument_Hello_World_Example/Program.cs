@@ -17,7 +17,7 @@ namespace RsInstrument_Hello_World_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.15.0");
+            RsInstrument.AssertMinVersion("1.18.0");
 
             try // Separate try-catch for initialization prevents accessing uninitialized object
             {
@@ -41,16 +41,18 @@ namespace RsInstrument_Hello_World_Example
                 return;
             }
 
+            var idn = instr.Query("*IDN?");
+            Console.WriteLine($"Hello, I am: '{idn}'\n");
+
             Console.WriteLine($"RsInstrument Driver Version: {instr.Identification.DriverVersion}, Core Version: {instr.Identification.CoreVersion}");
             Console.WriteLine($"Visa Manufacturer: '{instr.Identification.VisaManufacturer}'");
             Console.WriteLine($"Instrument Name: '{instr.Identification.InstrumentFullName}'");
-            Console.WriteLine($"Instrument installed options: '{string.Join(",", instr.Identification.InstrumentOptions)}'");
-            string idn = instr.QueryString("*IDN?");
-            Console.WriteLine($"Hello, I am: '{idn}'");
+            Console.WriteLine($"Instrument installed options: '{string.Join(", ", instr.Identification.InstrumentOptions)}'");
 
             Console.WriteLine("\nPress any key to finish ...");
             Console.ReadKey();
 
+            instr.GoToLocal();
             instr.Dispose();
         }
     }

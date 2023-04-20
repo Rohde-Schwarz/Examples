@@ -26,7 +26,7 @@ namespace Csharp_VISA.NET_Scope_SRQevent_Example
         {
 
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.15.0");
+            RsInstrument.AssertMinVersion("1.18.0");
 
             try // Separate try-catch for scope initialization prevents accessing uninitialized object
             {
@@ -52,23 +52,25 @@ namespace Csharp_VISA.NET_Scope_SRQevent_Example
                 Console.WriteLine($"RsInstrument Driver Version: {instr.Identification.DriverVersion}, Core Version: {instr.Identification.CoreVersion}");
                 instr.ClearStatus(); // Clear instrument status - errors and io buffers
                 Console.WriteLine($"Instrument Identification string:\n{instr.Identification.IdnString}");
-                instr.WriteString("*RST;*CLS"); // Reset the instrument, clear the Error queue
-                instr.WriteString("SYST:DISP:UPD ON"); // Display update ON - switch OFF after debugging
+                instr.Write("*RST;*CLS"); // Reset the instrument, clear the Error queue
+                instr.Write("SYST:DISP:UPD ON"); // Display update ON - switch OFF after debugging
+                
                 //-----------------------------------------------------------
                 // Basic Settings:
                 //-----------------------------------------------------------
-                instr.WriteString("ACQ:POIN:AUTO RECL;:TIM:RANG 2.0;:ACQ:POIN 1002;:CHAN1:STAT ON;:TRIG1:MODE AUTO"); // Define Horizontal scale by number of points
+                instr.Write("ACQ:POIN:AUTO RECL;:TIM:RANG 2.0;:ACQ:POIN 1002;:CHAN1:STAT ON;:TRIG1:MODE AUTO"); // Define Horizontal scale by number of points
+                
                 //-----------------------------------------------------------
                 // Acquisitions:
                 //-----------------------------------------------------------
                 Console.WriteLine("Acquisition no. 1 started...");
                 instr.Events.WriteWithOpcHandler = Scope_SrqHandler;
-                instr.Events.WriteStringWithOpc("SING"); // Send the SING command and call Scope_SrqHandler() when finished.
+                instr.Events.WriteWithOpc("SING"); // Send the SING command and call Scope_SrqHandler() when finished.
                 Thread.Sleep(6000); // Wait here for invoking the handler Scope_SrqHandler()
 
                 // Repeat
                 Console.WriteLine("Acquisition no. 2 started...");
-                instr.Events.WriteStringWithOpc("SING"); // Send the SING command and call Scope_SrqHandler() when finished.
+                instr.Events.WriteWithOpc("SING"); // Send the SING command and call Scope_SrqHandler() when finished.
                 Thread.Sleep(6000); // Wait here for invoking the handler Scope_ServiceRequest()
                 instr.Events.WriteWithOpcHandler = null; // remove the handler
             }

@@ -35,7 +35,7 @@ namespace RsSmab_Example
             smab.Source.Frequency.Fixed.Value = 234E6;
 
             // Direct SCPI interface:
-            var response = smab.Utilities.QueryString("*IDN?");
+            var response = smab.Utilities.Query("*IDN?");
             Console.WriteLine($"Direct SCPI response on *IDN?: {response}");
 
             // Closing the session

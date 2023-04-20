@@ -16,7 +16,7 @@ namespace RsInstrument_RTO2000_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.15.0");
+            RsInstrument.AssertMinVersion("1.18.0");
 
             try // Separate try-catch for initialization prevents accessing uninitialized object
             {
@@ -42,38 +42,43 @@ namespace RsInstrument_RTO2000_Example
                 Console.WriteLine($"RsInstrument Driver Version: {instr.Identification.DriverVersion}, Core Version: {instr.Identification.CoreVersion}");
                 instr.ClearStatus(); //Clear instrument status - errors and io buffers
                 Console.WriteLine($"Instrument Identification string:\n{instr.Identification.IdnString}");
-                instr.WriteString("*RST;*CLS"); // Reset the instrument, clear the Error queue
-                instr.WriteString("SYST:DISP:UPD ON"); // Display update ON - switch OFF after debugging
+                instr.Write("*RST;*CLS"); // Reset the instrument, clear the Error queue
+                instr.Write("SYST:DISP:UPD ON"); // Display update ON - switch OFF after debugging
+                
                 //-----------------------------------------------------------
                 // Basic Settings:
                 //-----------------------------------------------------------
-                instr.WriteString("ACQ:POIN:AUTO RECL"); // Define Horizontal scale by number of points
-                instr.WriteString("TIM:RANG 0.01"); // 10ms Acquisition time
-                instr.WriteString("ACQ:POIN 20002"); // 20002 X points
-                instr.WriteString("CHAN1:RANG 2"); // Horizontal range 2V
-                instr.WriteString("CHAN1:POS 0"); // Offset 0
-                instr.WriteString("CHAN1:COUP AC"); // Coupling AC 1MOhm
-                instr.WriteString("CHAN1:STAT ON"); // Switch Channel 1 ON
+                instr.Write("ACQ:POIN:AUTO RECL"); // Define Horizontal scale by number of points
+                instr.Write("TIM:RANG 0.01"); // 10ms Acquisition time
+                instr.Write("ACQ:POIN 20002"); // 20002 X points
+                instr.Write("CHAN1:RANG 2"); // Horizontal range 2V
+                instr.Write("CHAN1:POS 0"); // Offset 0
+                instr.Write("CHAN1:COUP AC"); // Coupling AC 1MOhm
+                instr.Write("CHAN1:STAT ON"); // Switch Channel 1 ON
+               
                 //-----------------------------------------------------------
                 // Trigger Settings:
                 //-----------------------------------------------------------
-                instr.WriteString("TRIG1:MODE AUTO"); // Trigger Auto mode in case of no signal is applied
-                instr.WriteString("TRIG1:SOUR CHAN1"); // Trigger source CH1
-                instr.WriteString("TRIG1:TYPE EDGE;:TRIG1:EDGE:SLOP POS"); // Trigger type Edge Positive
-                instr.WriteString("TRIG1:LEV1 0.04"); // Trigger level 40mV
+                instr.Write("TRIG1:MODE AUTO"); // Trigger Auto mode in case of no signal is applied
+                instr.Write("TRIG1:SOUR CHAN1"); // Trigger source CH1
+                instr.Write("TRIG1:TYPE EDGE;:TRIG1:EDGE:SLOP POS"); // Trigger type Edge Positive
+                instr.Write("TRIG1:LEV1 0.04"); // Trigger level 40mV
                 instr.QueryOpc(); // Using *OPC? query waits until all the instrument settings are finished
+                
                 // -----------------------------------------------------------
                 // SyncPoint 'SettingsApplied' - all the settings were applied
                 // -----------------------------------------------------------
                 // Arming the SCOPE for single acquisition
                 // -----------------------------------------------------------
                 instr.VisaTimeout = 2000; // Acquisition timeout - set it higher than the acquisition time
-                instr.WriteString("SING");
+                instr.Write("SING");
+                
                 // -----------------------------------------------------------
                 // DUT_Generate_Signal() - in our case we use Probe compensation signal
                 // where the trigger event (positive edge) is reoccuring
                 // -----------------------------------------------------------
                 instr.QueryOpc(); // Using *OPC? query waits until the instrument finished the Acquisition
+                
                 // -----------------------------------------------------------
                 // SyncPoint 'AcquisitionFinished' - the results are ready
                 // -----------------------------------------------------------
@@ -81,6 +86,7 @@ namespace RsInstrument_RTO2000_Example
                 // -----------------------------------------------------------
                 double[] waveformAsc = instr.Binary.QueryBinOrAsciiFloatArray("FORM ASC;:CHAN1:DATA?"); // Query ascii or binary data
                 Console.WriteLine($"Instrument returned {waveformAsc.Length} samples in the waveformASC array");
+                
                 // -----------------------------------------------------------
                 // Fetching the trace in Binary format
                 // Transfer of traces in binary format is faster.
@@ -89,12 +95,13 @@ namespace RsInstrument_RTO2000_Example
                 instr.Binary.FloatNumbersFormat = InstrBinaryFloatNumbersFormat.Single4Bytes;
                 double[] waveformBin = instr.Binary.QueryBinOrAsciiFloatArray("FORM REAL,32;:CHAN1:DATA?"); // Query ascii or binary data
                 Console.WriteLine($"Instrument returned {waveformBin.Length} samples in the waveformBIN array");
+                
                 // -----------------------------------------------------------
                 // Making an instrument screenshot and transferring the file to the PC
                 // -----------------------------------------------------------
-                instr.WriteString("HCOP:DEV:LANG PNG"); // Set the screenshot format
-                instr.WriteString(@"MMEM:NAME 'c:\temp\Dev_Screenshot.png'"); // Set the screenshot path
-                instr.WriteString("HCOP:IMM"); // Make the screenshot now
+                instr.Write("HCOP:DEV:LANG PNG"); // Set the screenshot format
+                instr.Write(@"MMEM:NAME 'c:\temp\Dev_Screenshot.png'"); // Set the screenshot path
+                instr.Write("HCOP:IMM"); // Make the screenshot now
                 instr.QueryOpc(); // Wait for the screenshot to be saved
                 instr.File.FromInstrumentToPc(@"c:\temp\Dev_Screenshot.png", @"c:\Temp\PC_Screenshot.png"); // Read the response and store to the file in PC
                 Console.WriteLine(@"Screenshot file saved to PC 'c:\Temp\PC_Screenshot.png'");

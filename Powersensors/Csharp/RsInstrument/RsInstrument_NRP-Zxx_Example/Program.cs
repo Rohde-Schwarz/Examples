@@ -16,7 +16,7 @@ namespace RsInstrument_NrpZxx_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.15.0");
+            RsInstrument.AssertMinVersion("1.18.0");
 
             try // Separate try-catch for initialization prevents accessing uninitialized object
             {
@@ -44,22 +44,22 @@ namespace RsInstrument_NrpZxx_Example
                 Console.WriteLine($"RsInstrument Driver Version: {instr.Identification.DriverVersion}, Core Version: {instr.Identification.CoreVersion}");
                 instr.ClearStatus(); // Clear instrument io buffers
                 Console.WriteLine($"Instrument Identification string:\n{instr.Identification.IdnString}");
-                instr.WriteString("*RST"); // Reset the instrument, clear the Error queue
-                instr.WriteString("INIT:CONT OFF"); // Switch OFF the continuous sweep
+                instr.Write("*RST"); // Reset the instrument, clear the Error queue
+                instr.Write("INIT:CONT OFF"); // Switch OFF the continuous sweep
                 //-----------------------------------------------------------
                 // Basic Settings:
                 //-----------------------------------------------------------
-                instr.WriteString("SENS:FUNC \"POW:AVG\"");
-                instr.WriteString("SENS:FREQ 1e9");
-                instr.WriteString("SENS:AVER:COUNT:AUTO OFF");
-                instr.WriteString("SENS:AVER:COUN 16");
-                instr.WriteString("SENS:AVER:STAT ON");
-                instr.WriteString("SENS:AVER:TCON REP");
-                instr.WriteString("SENS:POW:AVG:APER 5e-3");
+                instr.Write("SENS:FUNC \"POW:AVG\"");
+                instr.Write("SENS:FREQ 1e9");
+                instr.Write("SENS:AVER:COUNT:AUTO OFF");
+                instr.Write("SENS:AVER:COUN 16");
+                instr.Write("SENS:AVER:STAT ON");
+                instr.Write("SENS:AVER:TCON REP");
+                instr.Write("SENS:POW:AVG:APER 5e-3");
                 // -----------------------------------------------------------
                 // SyncPoint 'SettingsApplied' - all the settings were applied
                 // -----------------------------------------------------------
-                instr.WriteString("INIT:IMM"); // Start the sweep
+                instr.Write("INIT:IMM"); // Start the sweep
 
                 // Wait for the measurement to finish loop
                 // 200 x 20ms results in cca 4000 ms timeout
@@ -84,8 +84,8 @@ namespace RsInstrument_NrpZxx_Example
                 // -----------------------------------------------------------
                 // Fetching the results, format does not matter, the driver function always parses it correctly
                 // -----------------------------------------------------------
-                instr.WriteString("FORMAT ASCII");
-                string[] results = instr.QueryString("FETCH?").Split(',').ToArray();
+                instr.Write("FORMAT ASCII");
+                string[] results = instr.Query("FETCH?").Split(',').ToArray();
                 // Only the first number is relevant for this measurement
                 double powerWatt = double.Parse(results[0]);
                 // Coerce to 1e-18 if a smaller number is returned

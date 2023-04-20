@@ -41,7 +41,7 @@ namespace RsSmcv_Example
             Console.WriteLine($"Channel PEP level: {smcv.Source.Power.Pep:F2} dBm");
 
             // Direct SCPI interface:
-            var response = smcv.Utilities.QueryString("*IDN?");
+            var response = smcv.Utilities.Query("*IDN?");
             Console.WriteLine($"Direct SCPI response on *IDN?: {response}");
 
             // Closing the session

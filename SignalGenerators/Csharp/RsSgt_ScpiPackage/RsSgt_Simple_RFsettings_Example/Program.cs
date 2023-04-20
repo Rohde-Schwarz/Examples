@@ -35,7 +35,7 @@ namespace RsSgt_Example
             Console.WriteLine($"Channel PEP level: {sgt.Source.Power.Pep:F2} dBm");
 
             // Direct SCPI interface:
-            var response = sgt.Utilities.QueryString("*IDN?");
+            var response = sgt.Utilities.Query("*IDN?");
             Console.WriteLine($"Direct SCPI response on *IDN?: {response}");
 
             // Closing the session

@@ -20,7 +20,7 @@ namespace RsInstrument_RTO2000_Synchronization_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.15.0");
+            RsInstrument.AssertMinVersion("1.18.0");
 
             try // Separate try-catch for scope initialization prevents accessing uninitialized object
             {
@@ -50,24 +50,24 @@ namespace RsInstrument_RTO2000_Synchronization_Example
                 Console.WriteLine($"RsInstrument Driver Version: {instr.Identification.DriverVersion}, Core Version: {instr.Identification.CoreVersion}");
                 instr.ClearStatus(); // Clear instrument io buffers
                 Console.WriteLine($"Instrument Identification string:\n{instr.Identification.IdnString}");
-                instr.WriteString("SYST:DISP:UPD ON"); // Display update switched ON
+                instr.Write("SYST:DISP:UPD ON"); // Display update switched ON
                 //-----------------------------------------------------------
                 // Settings all in one string:
                 //-----------------------------------------------------------
-                instr.WriteString("ACQ:POIN:AUTO RECL;:TIM:RANG 2.0;:ACQ:POIN 1002;:CHAN1:STAT ON;:TRIG1:MODE AUTO");
+                instr.Write("ACQ:POIN:AUTO RECL;:TIM:RANG 2.0;:ACQ:POIN 1002;:CHAN1:STAT ON;:TRIG1:MODE AUTO");
                 //-----------------------------------------------------------
                 // Acquisition:
                 //-----------------------------------------------------------
                 // Sending SCPI command SING and using STB polling synchonization, timeout 6000 ms
                 Console.Write("Acquisition started ... ");
-                instr.WriteStringWithOpc("SING", 6000);
+                instr.WriteWithOpc("SING", 6000);
                 Console.WriteLine("finished");
                 //-----------------------------------------------------------
                 // Selftest:
                 //-----------------------------------------------------------
                 // Synchronizing of a long-lasting command
                 Console.Write("Selftest started ... ");
-                instr.QueryStringWithOpc("*TST?", 120000);
+                instr.QueryWithOpc("*TST?", 120000);
                 Console.WriteLine("finished");
             }
             catch (RsInstrumentException e)

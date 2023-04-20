@@ -1,8 +1,9 @@
 ﻿' Hello World example for any R&S instrument
 
 Imports System
-Imports RohdeSchwarz.RsInstrument ' .NET component providing all the necessary VISA extended functionalities. Install as NuGet from www.nuget.org
 
+' .NET component providing all the necessary VISA extended functionalities. Install as NuGet from www.nuget.org
+Imports RohdeSchwarz.RsInstrument
 ' Preconditions:
 ' - R&S VISA 5.12.1+ (or NI VISA 18+)
 ' - Resource string adjusted to fit your instrument physical connection
@@ -34,7 +35,7 @@ Module Program
       return
     End Try
 
-    Dim idn = instr.QueryString("*IDN?")
+    Dim idn = instr.Query("*IDN?")
     Console.WriteLine($"Hello, I am: '{idn}'")
     Console.WriteLine($"RsInstrument Driver Version: {instr.Identification.DriverVersion}, Core Version: {instr.Identification.CoreVersion}")
     Console.WriteLine($"Visa Manufacturer: '{instr.Identification.VisaManufacturer}'")

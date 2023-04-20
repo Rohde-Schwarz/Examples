@@ -61,7 +61,7 @@ namespace RsSmw_Example
             Console.WriteLine($"Channel 2 PEP level: {smwB.Source.Power.Pep:F2} dBm");
 
             // Direct SCPI interface is in smw.Utilities:
-            var response = smw.Utilities.QueryString("*IDN?");
+            var response = smw.Utilities.Query("*IDN?");
             Console.WriteLine($"Direct SCPI response on *IDN?: {response}");
 
             // Closing the session
