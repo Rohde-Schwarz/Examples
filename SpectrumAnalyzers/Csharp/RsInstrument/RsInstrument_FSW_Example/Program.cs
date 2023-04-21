@@ -16,7 +16,7 @@ namespace RsInstrument_FSW_Example
         static void Main()
         {
             RsInstrument instr;
-            RsInstrument.AssertMinVersion("1.18.0");
+            RsInstrument.AssertMinVersion("1.18.1");
 
             try // Separate try-catch for initialization prevents accessing uninitialized object
             {
@@ -25,8 +25,8 @@ namespace RsInstrument_FSW_Example
                 //-----------------------------------------------------------
 
                 // Adjust the VISA Resource string to fit your instrument
-                instr = new RsInstrument("TCPIP::localhost::INSTR");
                 
+				instr = new RsInstrument("TCPIP::192.168.1.105::INSTR");
                 //instr = new RsInstrument("TCPIP::10.112.1.116::INSTR", "SelectVisa=SocketIo"); // No VISA needed.
                 instr.VisaTimeout = 3000; // Timeout for VISA Read Operations
                 instr.OpcTimeout = 15000; // Timeout for opc-synchronised operations
@@ -104,8 +104,9 @@ namespace RsInstrument_FSW_Example
                 instr.File.FromInstrumentToPc(@"c:\temp\Dev_Screenshot.png", @"c:\Temp\PC_Screenshot.png"); // Query the instrument file
                 Console.WriteLine(@"Screenshot file saved to PC 'c:\Temp\PC_Screenshot.png'");
 
-                // Close the sesssion.
+                // Go to local mode and close the sesssion.
                 instr.GoToLocal();
+
                 instr.Dispose();
             }
             catch (RsInstrumentException e)
