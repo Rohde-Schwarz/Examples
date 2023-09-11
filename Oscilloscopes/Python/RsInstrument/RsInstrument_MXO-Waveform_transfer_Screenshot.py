@@ -49,14 +49,9 @@ def main():
     print(f'Device IDN: {mxo.idn_string}')
     print(f'Device Options: {",".join(mxo.instrument_options)}\n')
 
-    mxo.clear_status()
-    mxo.reset()
-
     # Basic settings - To test with mxo probe compensation signal connected to CH1
     mxo.write('SYSTem:DISPlay:UPDate ON')  # Keep display on while under remote control
-    mxo.opc_timeout = 10000  # Change OPC timeout value as the next action will take more than 3 seconds
-    mxo.write_with_opc('AUToscale')  # Perform autoscaling on the used signal
-    mxo.opc_timeout = 3000  # And change OPC timeout value back to default
+    mxo.write_with_opc('AUToscale', 10000)  # Perform autoscaling on the used signal, timeout 10 seconds
     mxo.write('TRIGger:MODE NORMal')  # Set trigger to Normal to avoid unwanted triggering while in Auto mode
 
     # Perform acquisition
