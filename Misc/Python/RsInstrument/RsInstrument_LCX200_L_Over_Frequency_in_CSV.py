@@ -14,7 +14,7 @@ Example about how to test a DUT's frequency response, write it into a CSV file  
 
 General Information:
 Please always check this example script for unsuitable setting that may
-destroy your DUT before connecting it to the instrument!
+damage your DUT before connecting it to the instrument!
 This example does not claim to be complete. All information has been
 compiled with care. However, errors can not be ruled out.
 """
@@ -28,11 +28,11 @@ stop_freq = 10e6  # Stop frequency in Hz (Range is HW dependent)
 freq_step = 50e3  # Frequency scan step in Hz
 meas_interv = 'MED'  # Set the measurement time interval. Valid values are: SHORt (0.15 s), MEDium (0.1 s), LONG (0.5 s)
 compensate = 'N'  # Choose if Open / Short Compensation and Reset will be performed (possible values: Y and N).
-file_path_name = 'C:\\tempdata\\fresponse.csv'
+file_path_name = f'C:\temp\fresponse.csv'
 
 RsInstrument.assert_minimum_version("1.60")  # Check for RsInstrument version and stop if version number is too low
 
-lcx = RsInstrument('TCPIP::10.205.0.67::hislip0', reset=False, id_query=True,
+lcx = RsInstrument('TCPIP::10.102.189.20::hislip0', reset=False, id_query=True,
                    options="SelectVisa='rs' , LoggingMode = Off, LoggingToConsole = False")
 
 
