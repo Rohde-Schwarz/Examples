@@ -120,7 +120,7 @@ def close():
     nrq6.close()
 
 
-# Main program begins here
+# Main program begins herenrp18sn
 com_prep()
 spar_check(step='after initialization')
 upload_spar()
@@ -132,3 +132,4 @@ disable()
 measure(step="with NO S-Parameter in use")
 del_spar()
 spar_check(step=f'after deleting "{spar_dev_name}"')
+close()
