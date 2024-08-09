@@ -9,7 +9,7 @@ Sets Output Frequency and Power, then sets the output state to ON.
 from RsInstrument import *
 
 # Initialize the session
-smb = RsInstrument('TCPIP::10.102.52.42::hislip0')
+smb = RsInstrument('TCPIP::192.168.1.100::hislip0')
 
 print(f"\nHello, I am: '{smb.idn_string}'")
 print(f'Instrument installed options: {",".join(smb.instrument_options)}')

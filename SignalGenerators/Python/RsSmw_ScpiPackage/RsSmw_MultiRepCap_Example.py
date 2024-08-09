@@ -4,7 +4,7 @@
 from RsSmw import *
 
 RsSmw.assert_minimum_version('5.0.44')
-smw = RsSmw('TCPIP::10.102.52.47::HISLIP', True, True)
+smw = RsSmw('TCPIP::192.168.1.100::hislip0', True, True)
 print(f'Driver Info: {smw.utilities.driver_version}')
 print(f'Instrument: {smw.utilities.idn_string}')
 

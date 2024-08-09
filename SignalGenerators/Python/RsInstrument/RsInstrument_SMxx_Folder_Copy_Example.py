@@ -14,7 +14,7 @@ smw = None
 RsInstrument.assert_minimum_version('1.54.0')
 try:
 	# Adjust the VISA Resource string to fit your instrument
-	smw = RsInstrument('TCPIP::10.99.2.10::hislip0')
+	smw = RsInstrument('TCPIP::192.168.1.100::hislip0')
 except Exception as ex:
 	print('Error initializing the instrument session:\n' + ex.args[0])
 	exit()

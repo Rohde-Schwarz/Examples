@@ -1,7 +1,7 @@
 from RsSmw import *
 
 RsSmw.assert_minimum_version('5.0.44')
-smw = RsSmw('TCPIP::10.102.52.47::HISLIP')
+smw = RsSmw('TCPIP::192.168.1.100::hislip0')
 # smw = RsSmw('TCPIP::10.112.1.179::5025::SOCKET', options='SelectVisa=SocketIo') # No VISA needed
 print(f'Driver Info: {smw.utilities.driver_version}')
 print(f'Instrument: {smw.utilities.idn_string}')

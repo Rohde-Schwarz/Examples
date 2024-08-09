@@ -4,7 +4,7 @@
 from RsSmbv import *
 
 RsSmbv.assert_minimum_version('4.80.2')
-smbv = RsSmbv('TCPIP::10.112.0.228::HISLIP', True, True)
+smbv = RsSmbv('TCPIP::192.168.1.100::hislip0', True, True)
 print(f'Driver Info: {smbv.utilities.driver_version}')
 print(f'Instrument: {smbv.utilities.idn_string}')
 

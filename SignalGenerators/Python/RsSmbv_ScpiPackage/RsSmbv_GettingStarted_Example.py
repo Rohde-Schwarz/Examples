@@ -6,7 +6,7 @@ Notice that the python RsSmbv interfaces track the SCPI commands syntax."""
 from RsSmbv import *
 
 # Open the session
-smbv = RsSmbv('TCPIP::10.112.0.228::HISLIP')
+smbv = RsSmbv('TCPIP::192.168.1.100::hislip0')
 # Greetings, stranger...
 print(f'Hello, I am: {smbv.utilities.idn_string}')
 

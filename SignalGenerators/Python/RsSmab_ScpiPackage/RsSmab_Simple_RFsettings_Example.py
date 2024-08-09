@@ -3,7 +3,7 @@
 from RsSmab import *
 
 RsSmab.assert_minimum_version('4.70.300')
-smab = RsSmab('TCPIP::10.112.1.64::HISLIP')
+smab = RsSmab('TCPIP::192.168.1.100::hislip0')
 # smab = RsSmab('TCPIP::10.112.0.106::5025::SOCKET', options='SelectVisa=SocketIo') # No VISA needed
 print(f'Driver Info: {smab.utilities.driver_version}')
 print(f'Instrument: {smab.utilities.idn_string}')

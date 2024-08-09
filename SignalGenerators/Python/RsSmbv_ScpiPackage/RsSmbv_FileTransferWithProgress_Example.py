@@ -24,7 +24,7 @@ def my_transfer_handler(args):
 
 
 RsSmbv.assert_minimum_version('4.80.2')
-smbv = RsSmbv('TCPIP::10.112.1.73::HISLIP')
+smbv = RsSmbv('TCPIP::192.168.1.100::hislip0')
 print(smbv.utilities.idn_string)
 smbv.utilities.reset()
 

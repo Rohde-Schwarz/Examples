@@ -3,7 +3,7 @@
 from RsSgt import *
 
 
-sgt = RsSgt('TCPIP::10.112.1.73::HISLIP')
+sgt = RsSgt('TCPIP::192.168.1.100::hislip0')
 # sgt = RsSgt('TCPIP::10.214.1.57::5025::SOCKET', options='SelectVisa=SocketIo') # No VISA needed
 print(f'Driver Info: {sgt.utilities.driver_version}')
 print(f'Instrument: {sgt.utilities.idn_string}')

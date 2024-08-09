@@ -9,7 +9,7 @@ import numpy as np
 from RsSgt import *
 
 RsSgt.assert_minimum_version('4.70.1')
-sgt = RsSgt('TCPIP::10.214.1.57::HISLIP')
+sgt = RsSgt('TCPIP::192.168.1.100::hislip0')
 print(sgt.utilities.idn_string)
 sgt.utilities.reset()
 

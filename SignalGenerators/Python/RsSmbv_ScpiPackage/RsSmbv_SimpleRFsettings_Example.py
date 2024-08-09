@@ -3,7 +3,7 @@
 from RsSmbv import *
 
 RsSmbv.assert_minimum_version('4.80.2')
-smbv = RsSmbv('TCPIP::10.112.0.228::HISLIP')
+smbv = RsSmbv('TCPIP::192.168.1.100::hislip0')
 # smbv = RsSmbv('TCPIP::10.112.1.179::5025::SOCKET', options='SelectVisa=SocketIo') # No VISA needed
 print(f'Driver Info: {smbv.utilities.driver_version}')
 print(f'Instrument: {smbv.utilities.idn_string}')

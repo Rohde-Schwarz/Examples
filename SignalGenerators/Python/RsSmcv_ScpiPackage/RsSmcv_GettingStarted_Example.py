@@ -7,7 +7,7 @@ from RsSmcv import *
 
 # Open the session
 RsSmcv.assert_minimum_version('5.0.122')
-smcv = RsSmcv('TCPIP::10.102.52.52::HISLIP')
+smcv = RsSmcv('TCPIP::192.168.1.100::hislip0')
 # Greetings, stranger...
 print(f'Hello, I am: {smcv.utilities.idn_string}')
 

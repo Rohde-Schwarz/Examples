@@ -6,7 +6,7 @@ Notice that the python RsSgt interfaces track the SCPI commands syntax."""
 from RsSgt import *
 
 # Open the session
-sgt = RsSgt('TCPIP::10.112.0.228::HISLIP')
+sgt = RsSgt('TCPIP::192.168.1.100::hislip0')
 # Greetings, stranger...
 print(f'Hello, I am: {sgt.utilities.idn_string}')
 
