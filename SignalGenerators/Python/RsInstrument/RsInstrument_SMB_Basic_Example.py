@@ -3,6 +3,7 @@
 
 This is a Hello-World example for communicating with your SMBxxx instrument.
 Sets Output Frequency and Power, then sets the output state to ON.
+RsInstrument documentation: https://rsinstrument.readthedocs.io/en/latest/
 """
 
 # RsInstrument package is hosted on pypi.org

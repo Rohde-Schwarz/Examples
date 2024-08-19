@@ -1,7 +1,11 @@
-"""Example showing how you can transfer a big file to the instrument and from the instrument with showing the progress.
+"""
+Example showing how you can transfer a big file to the instrument and from the instrument with showing the progress.
 Since the SMBV100B is quite fast on data transfer, we slow it down by waiting for 100ms between each chunk transfer (1MB)
 This way we see the transfer progress better and we do not need a file that is so big - let's take cca 20MB.
-For big files, use the example without the time.sleep(0.1)"""
+For big files, use the example without the time.sleep(0.1)
+
+RsSmbv documentation: https://rohde-schwarz.github.io/RsSmbv_PythonDocumentation/index.html
+"""
 
 import time
 import numpy as np

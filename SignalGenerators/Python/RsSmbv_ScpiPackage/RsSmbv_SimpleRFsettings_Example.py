@@ -1,4 +1,8 @@
-"""Basic example of importing the package, initializing the session and performing basic generator settings."""
+"""
+Basic example of importing the package, initializing the session and performing basic generator settings.
+
+RsSmbv documentation: https://rohde-schwarz.github.io/RsSmbv_PythonDocumentation/index.html
+"""
 
 from RsSmbv import *
 

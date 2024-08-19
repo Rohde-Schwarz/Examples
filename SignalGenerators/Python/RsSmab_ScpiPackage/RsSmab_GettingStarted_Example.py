@@ -1,7 +1,11 @@
-"""Getting started - how to work with RsSmab Python package.
+"""
+Getting started - how to work with RsSmab Python package.
 This example performs basic RF settings on an SMA100B instrument.
 It shows the RsSmab calls and their corresponding SCPI commands.
-Notice that the python RsSmab interfaces track the SCPI commands syntax."""
+Notice that the python RsSmab interfaces track the SCPI commands syntax.
+
+RsSmab documentation: https://rssmab.readthedocs.io/en/latest/
+"""
 
 from RsSmab import *
 

@@ -1,7 +1,11 @@
-"""Getting started - how to work with RsSmcv Python package.
+"""
+Getting started - how to work with RsSmcv Python package.
 This example performs basic RF settings on an SMCV100B instrument.
 It shows the RsSmcv calls and their corresponding SCPI commands.
-Notice that the python RsSmcv interfaces track the SCPI commands syntax."""
+Notice that the python RsSmcv interfaces track the SCPI commands syntax.
+
+RsSmcv documentation: https://rssmcv.readthedocs.io/en/latest/
+"""
 
 from RsSmcv import *
 

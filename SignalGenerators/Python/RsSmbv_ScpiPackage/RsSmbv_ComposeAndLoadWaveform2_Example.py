@@ -1,8 +1,11 @@
-"""The example:
+"""
+The example:
  - creates waveform file from two i_data and q_data vectors
  - sends the file to the SMBV instrument
  - activates the waveform
  You have the option of auto-scaling the samples to the full range with the parameter 'auto_scale'
+ 
+RsSmbv documentation: https://rohde-schwarz.github.io/RsSmbv_PythonDocumentation/index.html
 """
 
 import numpy as np

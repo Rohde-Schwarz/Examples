@@ -1,8 +1,11 @@
-"""The example:
+"""
+The example:
  - creates waveform file from a csv-file with I/Q pairs
  - sends the file to the SMW instrument
  - activates the waveform on Output 1
  You have the option of auto-scaling the samples to the full range
+ 
+RsSmw documentation: https://rohde-schwarz.github.io/RsSmw_PythonDocumentation/index.html
 """
 
 import numpy as np

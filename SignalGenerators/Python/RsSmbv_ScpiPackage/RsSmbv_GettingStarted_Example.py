@@ -1,7 +1,11 @@
-"""Getting started - how to work with RsSmbv Python package.
+"""
+Getting started - how to work with RsSmbv Python package.
 This example performs basic RF settings on an SMBV100B instrument.
 It shows the RsSmbv calls and their corresponding SCPI commands.
-Notice that the python RsSmbv interfaces track the SCPI commands syntax."""
+Notice that the python RsSmbv interfaces track the SCPI commands syntax.
+
+RsSmbv documentation: https://rohde-schwarz.github.io/RsSmbv_PythonDocumentation/index.html
+"""
 
 from RsSmbv import *
 

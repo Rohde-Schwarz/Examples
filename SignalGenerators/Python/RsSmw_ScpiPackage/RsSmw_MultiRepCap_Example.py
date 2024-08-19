@@ -1,5 +1,9 @@
-# This example shows how to work with commands that have many repeated capabilities (numeric suffixes)
-# The example does not demonstrate any valid instrument settings, rather the instrument driver general rules of working with the repeated capabilities
+"""
+This example shows how to work with commands that have many repeated capabilities (numeric suffixes).
+The example does not demonstrate any valid instrument settings, rather the instrument driver general rules of working with the repeated capabilities.
+
+RsSmw documentation: https://rohde-schwarz.github.io/RsSmw_PythonDocumentation/index.html
+"""
 
 from RsSmw import *
 

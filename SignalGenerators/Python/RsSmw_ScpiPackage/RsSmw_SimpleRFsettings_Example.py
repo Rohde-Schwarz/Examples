@@ -1,3 +1,10 @@
+"""
+Basic example of importing the package, initializing the session and performing basic generator settings.
+
+RsSmw documentation: https://rohde-schwarz.github.io/RsSmw_PythonDocumentation/index.html
+"""
+
+
 from RsSmw import *
 
 RsSmw.assert_minimum_version('5.0.44')

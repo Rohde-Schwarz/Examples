@@ -4,6 +4,8 @@
 # Preconditions:
 # - Installed RsInstrument Python module from pypi.org
 # - Installed VISA e.g. R&S Visa 5.12.x or newer
+#
+# RsInstrument documentation: https://rsinstrument.readthedocs.io/en/latest/
 
 from RsInstrument import *  # The RsInstrument package is hosted on pypi.org, see Readme.txt for more details
 import numpy as np

@@ -1,7 +1,11 @@
-"""Getting started - how to work with RsSmw Python package.
+"""
+Getting started - how to work with RsSmw Python package.
 This example performs basic RF settings on an SMW200A instrument.
 It shows the RsSmw calls and their corresponding SCPI commands.
-Notice that the python RsSmw interfaces track the SCPI commands syntax."""
+Notice that the python RsSmw interfaces track the SCPI commands syntax.
+
+RsSmw documentation: https://rohde-schwarz.github.io/RsSmw_PythonDocumentation/index.html
+"""
 
 from RsSmw import *
 

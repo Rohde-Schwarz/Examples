@@ -1,7 +1,11 @@
-"""Getting started - how to work with RsSgt Python package.
+"""
+Getting started - how to work with RsSgt Python package.
 This example performs basic RF settings on an SGT100A instrument.
 It shows the RsSgt calls and their corresponding SCPI commands.
-Notice that the python RsSgt interfaces track the SCPI commands syntax."""
+Notice that the python RsSgt interfaces track the SCPI commands syntax.
+
+RsSgt documentation: https://rssgt.readthedocs.io/en/latest/
+"""
 
 from RsSgt import *
 

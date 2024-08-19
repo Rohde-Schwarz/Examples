@@ -1,4 +1,5 @@
-"""The example:
+"""
+The example:
  - creates waveform file from two i_data and q_data vectors
  - sends the file to the SMW instrument
  - activates the waveform on Output A
@@ -6,6 +7,8 @@
  - activates the waveform on Output B
  You have the option of auto-scaling the samples to the full range
  The example auto-scales the Output B signal, the Output A signal is left as generated
+ 
+RsSmw documentation: https://rohde-schwarz.github.io/RsSmw_PythonDocumentation/index.html
 """
 
 import numpy as np

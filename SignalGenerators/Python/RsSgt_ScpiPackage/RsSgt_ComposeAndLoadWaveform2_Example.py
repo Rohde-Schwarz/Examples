@@ -3,6 +3,8 @@
  - sends the file to the SGT100A instrument
  - activates the waveform
  You have the option of auto-scaling the samples to the full range with the parameter 'auto_scale'
+ 
+ RsSgt documentation: https://rssgt.readthedocs.io/en/latest/
 """
 
 import numpy as np

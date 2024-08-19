@@ -1,4 +1,8 @@
-"""Basic example of importing the package, initializing the session and performing basic generator settings."""
+"""
+Basic example of importing the package, initializing the session and performing basic generator settings.
+
+RsSmab documentation: https://rssmab.readthedocs.io/en/latest/
+"""
 
 from RsSmab import *
 
