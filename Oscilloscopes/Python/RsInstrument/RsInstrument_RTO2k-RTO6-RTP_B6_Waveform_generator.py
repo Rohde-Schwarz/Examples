@@ -22,8 +22,6 @@ compiled with care. However, errors can not be ruled out.
 import time
 
 from RsInstrument import *
-from time import sleep
-from matplotlib import *
 
 PcFilePath = r"c:\tempdata\waveform.csv"
 InstFilePath = r"c:\Users\Public\Documents\Rohde-Schwarz\Rtx\RefWaveforms\testform.csv"
