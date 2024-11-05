@@ -33,6 +33,7 @@ OutAxRangeMax = 10  # Highest position for the outer axis
 OuterStepSize = 5  # Step size for an outer axis sweep
 
 ats = RsAts1500c('TCPIP::169.254.2.10::200::SOCKET')  # Open communication using the VISA identifier of the chamber
+ats.utilities.visa_timeout = 5000
 
 
 def preset():
