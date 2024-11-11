@@ -24,7 +24,7 @@ namespace RsInstrument_RTO2000_Example
                 // Initialization:
                 //-----------------------------------------------------------
                 // Adjust the VISA Resource string to fit your instrument
-                instr = new RsInstrument("TCPIP::10.212.1.131::INSTR");
+                instr = new RsInstrument("TCPIP::10.102.52.25::hislip0", "SelectVisa=rs");
                 instr.VisaTimeout = 3000; // Timeout for VISA Read Operations
                 instr.OpcTimeout = 15000; // Timeout for opc-synchronised operations
                 instr.InstrumentStatusChecking = true; // Error check after each command
