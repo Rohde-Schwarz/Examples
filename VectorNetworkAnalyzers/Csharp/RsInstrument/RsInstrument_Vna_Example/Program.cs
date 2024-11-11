@@ -60,7 +60,7 @@ vna.QueryOpc();
 // Configure Diagram
 vna.Write("DISP:WIND1:TITL:DATA 'S21 Magnitude (dB)'");
 
-// Perform utomatic calibration (optional)
+// Perform automatic calibration (optional)
 //vna.WriteWithOpc("SENS1:CORR:COLL:AUTO '',2,3", 30000);
 
 // Perform one single sweep
