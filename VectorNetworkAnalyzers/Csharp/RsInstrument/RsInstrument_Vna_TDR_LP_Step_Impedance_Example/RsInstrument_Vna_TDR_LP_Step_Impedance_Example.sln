@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RsInstrument_Vna_TDR_LP_Step_Impedance_Example", "RsInstrument_Vna_TDR_LP_Step_Impedance_Example.csproj", "{13861D1E-D973-4C56-A4CA-D3695C65C59C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13861D1E-D973-4C56-A4CA-D3695C65C59C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13861D1E-D973-4C56-A4CA-D3695C65C59C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13861D1E-D973-4C56-A4CA-D3695C65C59C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13861D1E-D973-4C56-A4CA-D3695C65C59C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C7E6FDFD-5427-457D-A95E-13C7F00039EE}
+	EndGlobalSection
+EndGlobal
