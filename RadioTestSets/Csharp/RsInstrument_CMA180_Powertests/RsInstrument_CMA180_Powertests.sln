@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RsInstrument_CMA180_Powertests", "RsInstrument_CMA180_Powertests.csproj", "{D1326F83-CF81-4B56-A0C0-0B340E522D84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1326F83-CF81-4B56-A0C0-0B340E522D84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1326F83-CF81-4B56-A0C0-0B340E522D84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1326F83-CF81-4B56-A0C0-0B340E522D84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1326F83-CF81-4B56-A0C0-0B340E522D84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CDD2A3F-8898-44F3-B532-652F28ACBC4F}
+	EndGlobalSection
+EndGlobal
