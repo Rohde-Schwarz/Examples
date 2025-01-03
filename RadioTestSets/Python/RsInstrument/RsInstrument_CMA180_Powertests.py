@@ -64,13 +64,13 @@ def close():
     Instrument.close()
 
 
-def comcheck():
+def com_check():
     """Check communication with the device"""
 
     # Just knock on the door to see if instrument is present
-    idnResponse = Instrument.query_str('*IDN?')
+    idn_response = Instrument.query_str('*IDN?')
     sleep(1)
-    print('Hello, I am ' + idnResponse)
+    print('Hello, I am ' + idn_response)
 
 
 def meas_setup():
@@ -87,16 +87,15 @@ def meas_setup():
     Instrument.write_str_with_opc("SOURce:AFRF:GEN:MODulator:MDEPth 80")  # Set mod depth to 80 %
     Instrument.write_str_with_opc("SOURce:AFRF:GEN:STATe ON")  # Start signal transmission
 
-
-def sigsearch():
+def sig_search():
     """Signal searching routine using the analyzer's "Find RF" routine"""
     Instrument.write_str_with_opc("CONFigure:AFRF:MEAS:FREQuency:COUNter:AUTomatic ON")  # Automatically switch analyzer to the detected frequency
     Instrument.write_str_with_opc("INITiate:AFRF:MEAS:FREQuency:COUNter")  # Start to find the signal (should be 145.000 MHz now)
-    Freqread = Instrument.query_str("FETCh:AFRF:MEAS:FREQuency:COUNter?")  # Get frequency information
-    Freqread = Freqread.split(",")  # Spilt the output into a List
-    Freq = float(Freqread[1]) / 1000000
+    freq_read = Instrument.query_str("FETCh:AFRF:MEAS:FREQuency:COUNter?")  # Get frequency information
+    freq_read = freq_read.split(",")  # Split the output into a List
+    freq = float(freq_read[1]) / 1000000
     print()
-    print("Found a signal at " + str(Freq) + " MHz")
+    print("Found a signal at " + str(freq) + " MHz")
 
 
 def measure():
@@ -108,17 +107,17 @@ def measure():
 
     # Instrument.write_str_with_opc("CONFigure:GPRF:MEAS:POWer:REPetition CONT")         # Set power measurement to repetitive mode does not work
     # as the CMA is always running in Single shot mode when driven via remote control.
-    # It just can be preset for the case the unit gets back to local mode afterwards.
+    # It just can be preset for the case the unit gets back to local mode afterward.
     Instrument.write_str_with_opc("INITiate:GPRF:MEAS:POWer")  # Initiate power measurement
 
-    AvAM = Instrument.query_str("FETCh:GPRF:MEAS:POWer:CURRent?")  # Request Average Power
-    AvAM = AvAM.split(",")  # Split the string as we get two values back
+    av_am = Instrument.query_str("FETCh:GPRF:MEAS:POWer:CURRent?")  # Request Average Power
+    av_am = av_am.split(",")  # Split the string as we get two values back
     print()
-    print("The AM average power now is " + AvAM[1] + " dBm")  # Print value [1] (which is the second one)
+    print("The AM average power now is " + av_am[1] + " dBm")  # Print value [1] (which is the second one)
 
-    PkAM = Instrument.query_str("FETCh:GPRF:MEAS:POWer:MAXimum:CURRent?")  # Request Peak Power
-    PkAM = PkAM.split(",")  # Split the string as we get two values back
-    print("The AM peak power now is " + PkAM[1] + " dBm")  # Print value [1] (which is the second one)
+    pk_am = Instrument.query_str("FETCh:GPRF:MEAS:POWer:MAXimum:CURRent?")  # Request Peak Power
+    pk_am = pk_am.split(",")  # Split the string as we get two values back
+    print("The AM peak power now is " + pk_am[1] + " dBm")  # Print value [1] (which is the second one)
 
     ###
     ### Second Part: Perform the CW signal measurement (Power measurement ist still active)
@@ -127,9 +126,9 @@ def measure():
     Instrument.write_str_with_opc("SOURce:AFRF:GEN:MSCHeme CW")  # Modulation Scheme --> CW
     Instrument.write_str_with_opc("INITiate:GPRF:MEAS:POWer")  # Initiate power measurement
 
-    AvCW = Instrument.query_str("FETCh:GPRF:MEAS:POWer:CURRent?")  # Request Average Power
-    AvCW = AvCW.split(",")  # Split the string as we get two values back
-    print("The CW average power now is " + AvCW[1] + " dBm")  # Print value [1] (which is the second one)
+    av_cw = Instrument.query_str("FETCh:GPRF:MEAS:POWer:CURRent?")  # Request Average Power
+    av_cw = av_cw.split(",")  # Split the string as we get two values back
+    print("The CW average power now is " + av_cw[1] + " dBm")  # Print value [1] (which is the second one)
 
     ###
     ### Third Part: Compare Am to CW measurements
@@ -139,14 +138,14 @@ def measure():
     ### (Conversion rate RMS power AM vs CW = 10 * log (1+m*m/2) = 1.2 dB @ 80 % )
     ###
 
-    DiffAMavCW = float(AvAM[1]) - float(AvCW[1])  # Calculate Difference between AM average and CW Power
+    diff_am_av_cw = float(av_am[1]) - float(av_cw[1])  # Calculate Difference between AM average and CW Power
     print()
-    print("Difference between CW and AM average is " + str(round(DiffAMavCW, 3)) + " dB")
+    print("Difference between CW and AM average is " + str(round(diff_am_av_cw, 3)) + " dB")
     print("and should be about 1.2 dB")
 
-    DiffAMpkCW = float(PkAM[1]) - float(AvCW[1])  # Calculate Difference between AM peak and CW power
+    diff_am_pk_cw = float(pk_am[1]) - float(av_cw[1])  # Calculate Difference between AM peak and CW power
     print()
-    print("Difference between CW and AM peak is " + str(round(DiffAMpkCW, 3)) + " dB")
+    print("Difference between CW and AM peak is " + str(round(diff_am_pk_cw, 3)) + " dB")
     print("and should be about 5,1 dB")
 
 
