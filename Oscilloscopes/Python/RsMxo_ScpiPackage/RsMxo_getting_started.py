@@ -1,10 +1,9 @@
 """
+!!! Pre-release beta version !!!
 Getting started - how to work with RsMxo Python package.
 This example performs basic settings on an MXO oscilloscope.
 It shows the RsMxo calls and their corresponding SCPI commands.
-Notice that the python RsMxo interfaces track the SCPI commands syntax.
-
-RsMxo documentation:
+Notice that the python RsMxo interfaces track the SCPI commands structure.
 """
 
 from RsMxo import *
@@ -34,7 +33,7 @@ ch2.repcap_channel_set(channel=repcap.Channel.Ch2)
 ch1.state.set(True)
 ch2.state.set(True)
 
-mxo.runSingle.set()
+mxo.run.single_and_wait()
 
 data1 = ch1.waveform.data.values.get()
 data2 = ch2.waveform.data.values.get()
