@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RsInstrument" Version="1.18.0" />
+    <PackageReference Include="RsInstrument" Version="1.25.0" />
   </ItemGroup>
 
 </Project>
