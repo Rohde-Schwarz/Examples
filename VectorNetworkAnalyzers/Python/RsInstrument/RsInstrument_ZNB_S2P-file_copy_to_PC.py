@@ -62,12 +62,12 @@ def comprep():
 
 
 def close():
-    """Close the VISA session"""
+    """Closes the VISA session"""
     Instrument.close()
 
 
 def comcheck():
-    """Check communication with the device"""
+    """Checks communication with the device"""
 
     # Just knock on the door to see if instrument is present
     idnResponse = Instrument.query_str('*IDN?')
@@ -118,23 +118,23 @@ def meassetup():
 
 
 def measure():
-    """Perform a single sweep measurement"""
+    """Performs a single sweep measurement"""
     Instrument.write_str_with_opc('INIT1:CONTinuous OFF')
     Instrument.write_str_with_opc('INIT1:IMMediate')
 
 
 def saves2p():
-    """Save the measurement to a s2p file"""
+    """Saves the measurement to a s2p file"""
     Instrument.write_str_with_opc(f'MMEMory:STORe:TRACe:PORTs 1, "{s2p_filename}", COMPlex, 1, 2')
     # An S2P file does only contain real and imaginary part of each scatter parameter of the measurement.
     # To extract e.g. the magnitude and phase data of each trace, better use the command
-    # MMEMory:STORe:TRACe:CHANnel 1, 'tracefile.csv', FORM, LINPhase
+    # MMEMory:STORe:TRACe:CHANnel 1, 'tracefile.s2p', FORM, LINPhase
     # Using this simple file format it will be stored in path
     # C:\Users\Public\Documents\Rohde-Schwarz\Vna
 
 
 def fileget():
-    """Perform calibration with short element"""
+    """Reads the file from the instrument to the PC"""
     Instrument.read_file_from_instrument_to_pc(s2p_filename, pc_filename)
 
 
