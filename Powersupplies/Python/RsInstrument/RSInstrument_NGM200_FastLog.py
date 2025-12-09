@@ -21,7 +21,7 @@ destroy your DUT before connecting it to the instrument!
 Set the instrument to default and set required voltage and current values before starting this program.
 FastLog data is collected into an internal buffer in the instrument and provided on the remote control interface
 in chunks every 250 ms, independent of the sample rate.
-If the data is not picked up during the next 20 ms, it is overwritten in the buffer.
+If the data is not picked up during the next 250 ms, it is overwritten in the buffer.
 This example does not claim to be complete. All information has been
 compiled with care. However, errors can not be ruled out.
 
