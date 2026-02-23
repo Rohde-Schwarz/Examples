@@ -2,7 +2,6 @@
 This example makes a screenshot of the current screen content of an RTO Oscilloscope display,
 and transfers it into the host PC.
 """
-import os
 from pathlib import Path
 
 from rsrtx import *
@@ -17,17 +16,15 @@ RsRtx.assert_minimum_version('5.55.0')
 
 # Open the session - adjust the resource name to fit your instrument
 rto = RsRtx('TCPIP::10.103.34.49::hislip0')
-# Greetings, stranger...
 print(f'Hello, I am: {rto.utilities.idn_string}')
 rto.utilities.visa_timeout = 5000
 
 rto.system.display.set_update(True)
-
 rto.hardCopy.set_destination(medium='MMEM')
-rto.hardCopy.device.set_language(PictureFileFormat.PNG)
 current_dir = rto.massMemory.get_current_directory()
 instr_file_path = current_dir + '\\' + instr_file_name
 rto.massMemory.set_name(instr_file_path)
+rto.hardCopy.device.set_language(PictureFileFormat.PNG)
 
 rto.hardCopy.immediate.perform()
 
