@@ -6,7 +6,7 @@ from rsmxo import *
 from rsmxo.enums import *
 
 
-RsMxo.assert_minimum_version('2.6.4')
+RsMxo.assert_minimum_version('2.9')
 
 # Open the session - adjust the resource name to fit your instrument
 mxo = RsMxo('TCPIP::192.168.1.101::hislip0', id_query=False)
