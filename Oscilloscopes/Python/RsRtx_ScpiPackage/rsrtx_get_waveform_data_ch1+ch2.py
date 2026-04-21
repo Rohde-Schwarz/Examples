@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 RsMxo.assert_minimum_version('2.6.4')
 
 # Open the session - adjust the resource name to fit your instrument
-mxo = RsMxo('TCPIP::192.168.1.101::hislip0', id_query=False)
+mxo = RsMxo('TCPIP::localhost::hislip0', id_query=False)
 # Greetings, stranger...
 print(f'Hello, I am: {mxo.utilities.idn_string}')
 
